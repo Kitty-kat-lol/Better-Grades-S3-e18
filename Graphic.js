@@ -1,29 +1,42 @@
-//The begenning graphique
+<!–– The begenning graphique ––>
 
+<!DOCTYPE html>
 <html>
 <body>
 
-<h1>My First JavaScript</h1>
+<h1>Interface Initiale</h1>
 
-<p>JavaScript can change the content of an HTML element:</p>
+<p>Better-Grades-S3-e18</p>
 
-<button type="button" onclick="myFunction1()">Click Me!</button>
+<!–– Boutton1 ––>
+<p id="Affichage1">Ca marche pas.</p>
 
-<p id="demo">Ca marche pas.</p>
+<button type="button" onclick="myFunction1()">Get notes!</button>
 
 <script>
 function myFunction1() {
-    document.getElementById("demo").innerHTML = "C'est la faute de Gab!";
+    document.getElementById("Affichage1").innerHTML = "C'est la faute de Gab!";
 }
 </script>
 
-<button type="button" onclick="myFunction()">Click Me!</button>
+<!–– Boutton2 ––>
+<p id="Affichage2">Ca marche toujour pas ?</p>
 
-<p id="demo1">Ca marche toujour pas ?</p>
+<button type="button" onclick="myFunction2()">Cours suivant!</button>
 
 <script>
-function myFunction() {
-    document.getElementById("demo1").innerHTML = "C'est encore la faute de Gab!";
+function myFunction2() {
+    document.getElementById("Affichage2").innerHTML = "C'est encore la faute de Gab!";
+}
+</script>
+<!–– Boutton3 ––>
+<p id="Affichage3">Et après?</p>
+
+<button type="button" onclick="myFunction3()">"Réponse de l'univers!"</button>
+
+<script>
+function myFunction3() {
+    document.getElementById("Affichage3").innerHTML = "C GAB!";
 }
 </script>
 
