@@ -1,0 +1,7 @@
+NAME: elephantsql
+HOST: stampy.db.elephantsql.com
+PORT: 5432
+DATABASE: bejrzqkj
+USER: bejrzqkj
+PASSWORD: p6ncgVvbuCbmMdqtwxUFI3zKpu83lhR_
+URL: jdbc:postgresql://stampy.db.elephantsql.com:5432/bejrzqkj
