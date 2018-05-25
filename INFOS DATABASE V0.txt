@@ -1,3 +1,6 @@
+For IntelliJ:
+
+
 NAME: elephantsql
 HOST: stampy.db.elephantsql.com
 PORT: 5432
@@ -5,3 +8,20 @@ DATABASE: bejrzqkj
 USER: bejrzqkj
 PASSWORD: p6ncgVvbuCbmMdqtwxUFI3zKpu83lhR_
 URL: jdbc:postgresql://stampy.db.elephantsql.com:5432/bejrzqkj
+
+For PGadmin:
+NAME: elephantsql
+HOST: stampy.db.elephantsql.com
+PORT: 5432
+MAINTENANCE DB: bejrzqkj
+USER: bejrzqkj
+PASSWORD: p6ncgVvbuCbmMdqtwxUFI3zKpu83lhR_
+
+
+For Eclipse:
+
+NAME: elephantsql
+DATABASE: bejrzqkj
+URL: jdbc:postgresql://stampy.db.elephantsql.com:5432/bejrzqkj
+USER: bejrzqkj
+PASSWORD: p6ncgVvbuCbmMdqtwxUFI3zKpu83lhR_
