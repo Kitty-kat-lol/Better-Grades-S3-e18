@@ -27,4 +27,3 @@ USER: bejrzqkj
 PASSWORD: p6ncgVvbuCbmMdqtwxUFI3zKpu83lhR_
 
 test_tyry 
-Input de gab
