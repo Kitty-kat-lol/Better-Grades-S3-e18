@@ -25,3 +25,5 @@ DATABASE: bejrzqkj
 URL: jdbc:postgresql://stampy.db.elephantsql.com:5432/bejrzqkj
 USER: bejrzqkj
 PASSWORD: p6ncgVvbuCbmMdqtwxUFI3zKpu83lhR_
+
+test_tyry
