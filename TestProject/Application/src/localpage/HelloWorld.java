@@ -1,4 +1,4 @@
-package helloworld;
+package localpage;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,6 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import MyBatisPackage.model.Cours;
 
 /**
  * Servlet implementation class HelloWorld
@@ -31,8 +33,12 @@ public class HelloWorld extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getLocalName());
 		PrintWriter out = response.getWriter();
-		out.append("Hello World\n");
+		/*out.append("Hello World\n");
 		out.append("Moman");
+		Cours gen444 = new Cours();
+		gen444.setId("gen444");*/
+		request.setAttribute(arg0, arg1);
+		
 	}
 
 	/**
