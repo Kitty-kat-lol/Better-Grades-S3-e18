@@ -23,6 +23,8 @@
 
     <display-name>s3_project Application</display-name>
 
+	<welcome-file>app_gui.html</welcome-file>
+	
     <servlet>
         <servlet-name>servlet</servlet-name>
         <servlet-class>project_servlet</servlet-class>
