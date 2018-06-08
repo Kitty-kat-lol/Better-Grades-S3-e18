@@ -2,6 +2,11 @@ package localpage;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +14,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import MyBatisPackage.model.Cours;
+import MyBatisPackage.*;
+import MyBatisPackage.dao.CoursDAO;
+//import MyBatisPackage.dao.*;
+import MyBatisPackage.mapper.*;
+import MyBatisPackage.model.*;
+import MyBatisPackage.resources.*;
+import MyBatisPackage.util.*;
+import org.apache.ibatis.io.Resources;
 
 /**
  * Servlet implementation class HelloWorld
@@ -31,14 +43,60 @@ public class HelloWorld extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getLocalName());
-		PrintWriter out = response.getWriter();
-		/*out.append("Hello World\n");
-		out.append("Moman");
-		Cours gen444 = new Cours();
-		gen444.setId("gen444");*/
-		request.setAttribute(arg0, arg1);
+		//response.getWriter().append("Served at: ").append(request.getLocalName());
 		
+		
+		
+		try {
+			Class.forName("org.postgresql.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		PrintWriter out = response.getWriter();
+		
+		out.println("Table Cours");
+		CoursDAO coursdao = new CoursDAO();
+		out.println(coursdao.getCoursById("GEN100").toString());
+		
+		
+		
+		System.out.println("Tentative de connection à la base de données...");
+		Connection connec = null;
+		Statement stmt = null;
+		String query = "SELECT * FROM COURS";
+		Cours test;
+		
+		/*try {
+			
+			connec = DriverManager.getConnection(DB_URL,USERNAME,PASSWORD);
+			
+			//Écrit le schéma sélectionné
+			connec.setSchema("grades");
+			System.out.println(connec.getSchema());
+			
+			test = new Cours();
+			stmt = connec.createStatement();
+			ResultSet rs = stmt.executeQuery(query);
+			while(rs.next()) {
+			     test.setId(rs.getString("cours_id"));
+			     test.setNom(rs.getString("nom"));
+			    out.println("Cours ID: "+test.getId()+" Nom: "+test.getNom());
+				
+			}
+			
+			}
+			catch(SQLException e) {
+				//Écrit le message d'erreur de la connection échouée
+				System.out.println(e.getMessage());
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}*/	
 	}
 
 	/**
@@ -47,6 +105,12 @@ public class HelloWorld extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		response.getWriter().append("Do Post");
+		
+		request.getRequestDispatcher("WebContent/WEN-INF/test.jsp");
+		
+		CoursDAO coursdao = new CoursDAO();
+		coursdao.getCoursById("GEN100");
 	}
 
 }
