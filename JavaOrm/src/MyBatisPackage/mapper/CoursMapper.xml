@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MyBatisPackage.mapper.CoursMapper">
+
+	<select id="getCoursById" parameterType="String" resultType="MyBatisPackage.model.Cours">
+		SELECT
+		cours_id as idCours,
+		nom as nomCours
+		FROM GRADES.COURS
+		WHERE COURS_ID = #{idCours}
+	</select>
+
+	<resultMap type="Cours" id="CoursResultSet">
+		<id property="idCours" column="cours_id" />
+		<result property="nomCours" column="nom" />
+	</resultMap>
+
+	<select id="getAllCourss" resultMap="CoursResultSet">
+		SELECT * FROM GRADES.COURS
+	</select>
+
+	<insert id="insertCours" parameterType="Cours" useGeneratedKeys="false">
+		INSERT INTO GRADES.COURS(cours_id, nom)
+		VALUES(#{idCours}, #{nomCours})
+	</insert>
+
+	<update id="updateCours" parameterType="Cours">
+		UPDATE GRADES.COURS
+		SET
+		NOM=#{nomCours}
+		WHERE
+		COURS_ID = #{idCours}
+	</update>
+
+	<delete id="deleteCours" parameterType="String">
+		DELETE FROM GRADES.COURS WHERE
+		COURS_ID = #{idCours}
+	</delete>
+
+</mapper>
