@@ -26,14 +26,14 @@ import org.apache.ibatis.io.Resources;
 /**
  * Servlet implementation class HelloWorld
  */
-@WebServlet("/HelloWorld")
-public class HelloWorld extends HttpServlet {
+@WebServlet("/CoursRaw")
+public class CoursRaw extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HelloWorld() {
+    public CoursRaw() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -59,7 +59,7 @@ public class HelloWorld extends HttpServlet {
 		
 		out.println("Table Cours");
 		CoursDAO coursdao = new CoursDAO();
-		out.println(coursdao.getCoursById("GEN100").toString());
+		out.println(coursdao.getAllCourss().toString());
 		
 		
 		
@@ -74,12 +74,9 @@ public class HelloWorld extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		response.getWriter().append("Do Post");
+		//response.getWriter().append("Do Post");
 		
-		request.getRequestDispatcher("WebContent/WEN-INF/test.jsp");
-		
-		CoursDAO coursdao = new CoursDAO();
-		coursdao.getCoursById("GEN100");
+	
 	}
 
 }
