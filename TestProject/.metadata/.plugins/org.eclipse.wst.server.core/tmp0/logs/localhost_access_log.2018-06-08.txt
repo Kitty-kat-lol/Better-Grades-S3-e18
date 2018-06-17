@@ -1,0 +1,3 @@
+0:0:0:0:0:0:0:1 - - [08/Jun/2018:08:57:45 -0400] "GET /Application/HelloWorld HTTP/1.1" 500 13
+0:0:0:0:0:0:0:1 - - [08/Jun/2018:08:59:53 -0400] "GET /Application/HelloWorld HTTP/1.1" 200 13
+0:0:0:0:0:0:0:1 - - [08/Jun/2018:09:02:04 -0400] "GET /Application/HelloWorld HTTP/1.1" 200 29

@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+D:\Github_projects\Better-Grades-S3-e18\TestProject\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+316727097.index
+3884515011.index
+1530043157.index
+1981754981.index
+675704162.index
+199504408.index
+1479484423.index

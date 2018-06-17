@@ -24,12 +24,3 @@ NAME: elephantsql
 DATABASE: bejrzqkj
 URL: jdbc:postgresql://stampy.db.elephantsql.com:5432/bejrzqkj
 USER: bejrzqkj
-PASSWORD: p6ncgVvbuCbmMdqtwxUFI3zKpu83lhR_
-
-<<<<<<< HEAD
-test_tyry 
-Input de gab
-=======
-test_tyry
-tyryyyyyyy
->>>>>>> 583992b329b64a5951b7b212ff572b98c75ab6ee

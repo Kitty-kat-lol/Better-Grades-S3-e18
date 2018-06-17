@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MyBatisPackage.mapper.UserMapper">
+
+	<select id="getUserById" parameterType="int" resultType="MyBatisPackage.model.User">
+		SELECT
+		user_id as userId,
+		email_id as emailId ,
+		password,
+		first_name as
+		firstName,
+		last_name as lastName
+		FROM GRADES.USER
+		WHERE USER_ID = #{userId}
+	</select>
+
+	<resultMap type="User" id="UserResultSet">
+		<id property="userId" column="user_id" />
+		<result property="emailId" column="email_id" />
+		<result property="password" column="password" />
+		<result property="firstName" column="first_name" />
+		<result property="lastName" column="last_name" />
+	</resultMap>
+
+	<select id="getAllUsers" resultMap="UserResultSet">
+		SELECT * FROM GRADES.USER
+	</select>
+
+	<insert id="insertUser" parameterType="User" useGeneratedKeys="true"
+		keyProperty="userId">
+		INSERT INTO GRADES.USER(email_id, password, first_name,
+		last_name)
+		VALUES(#{emailId}, #{password}, #{firstName}, #{lastName})
+	</insert>
+
+	<update id="updateUser" parameterType="User">
+		UPDATE GRADES.USER
+		SET
+		PASSWORD=#{password}
+		WHERE
+		USER_ID = #{userId}
+	</update>
+
+	<delete id="deleteUser" parameterType="int">
+		DELETE FROM GRADES.USER WHERE
+		USER_ID = #{userId}
+	</delete>
+
+</mapper>
