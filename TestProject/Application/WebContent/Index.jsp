@@ -11,7 +11,7 @@
 </head>
 
 <!-- Nom de la page -->
-<title>Test</title>
+<title>Simulate Login</title>
 
 <body>
 

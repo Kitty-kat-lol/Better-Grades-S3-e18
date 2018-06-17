@@ -61,7 +61,7 @@ public class CoursRaw extends HttpServlet {
 		CoursDAO coursdao = new CoursDAO();
 		out.println(coursdao.getAllCourss().toString());
 		
-		
+		//On reload le serveur
 		
 		System.out.println("Tentative de connection à la base de données...");
 		

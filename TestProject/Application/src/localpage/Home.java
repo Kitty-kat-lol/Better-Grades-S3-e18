@@ -10,19 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class JSP
+ * Servlet implementation class Home
  */
-@WebServlet("/JSP")
-public class JSP extends HttpServlet {
+@WebServlet(description = "Page d'accueuil de Better Grades", urlPatterns = { "/Home" })
+public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public JSP() {
+    public Home() {
         super();
         // TODO Auto-generated constructor stub
-        //test reload server
     }
 
 	/**
@@ -35,7 +34,7 @@ public class JSP extends HttpServlet {
 		response.setContentType("text/html") ;
 		// construction d'un request dispatcher sur la page JSP, qui doit exister
 		// dans la web application courante
-	    RequestDispatcher requestDispatcher = request.getRequestDispatcher("Index.jsp") ;
+	    RequestDispatcher requestDispatcher = request.getRequestDispatcher("Home.jsp") ;
 	    
 	     // inclusion de cette ressource
 	    requestDispatcher.include(request, response) ;
@@ -47,7 +46,6 @@ public class JSP extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		
 	}
 
 }
