@@ -1,7 +1,0 @@
-INDEX VERSION 1.130
-D:\Github_projects\Better-Grades-S3-e18\TestProject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\675704162.index
-\Application\src
-D:\Github_projects\Better-Grades-S3-e18\TestProject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1882603258.index
-\Application\src
-D:\Github_projects\Better-Grades-S3-e18\TestProject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2156840468.index
-\Application\src

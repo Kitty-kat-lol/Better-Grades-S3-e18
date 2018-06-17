@@ -31,6 +31,9 @@ public class Home extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
+		
+		
+		
 		response.setContentType("text/html") ;
 		// construction d'un request dispatcher sur la page JSP, qui doit exister
 		// dans la web application courante

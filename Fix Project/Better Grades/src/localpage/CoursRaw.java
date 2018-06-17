@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import MyBatisPackage.dao.ClassAverageDAO;
 import MyBatisPackage.dao.CoursDAO;
 
 /**
@@ -42,6 +43,7 @@ public class CoursRaw extends HttpServlet {
 		}
 		
 		out.println("");
+		ClassAverageDAO Averages = new ClassAverageDAO();
 		CoursDAO coursdao = new CoursDAO();
 		out.println(coursdao.getAllCourss().toString());
 	}
