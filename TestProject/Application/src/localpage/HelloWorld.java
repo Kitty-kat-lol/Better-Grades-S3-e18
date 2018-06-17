@@ -46,16 +46,14 @@ public class HelloWorld extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getLocalName());
 		
 		
-		
+		//Registering the driver
 		try {
 			Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
+				
 		
 		PrintWriter out = response.getWriter();
 		
@@ -63,41 +61,12 @@ public class HelloWorld extends HttpServlet {
 		CoursDAO coursdao = new CoursDAO();
 		out.println(coursdao.getCoursById("GEN100").toString());
 		
-		
+		//On reload le serveur
 		
 		System.out.println("Tentative de connection à la base de données...");
-		Connection connec = null;
-		Statement stmt = null;
-		String query = "SELECT * FROM COURS";
-		Cours test;
 		
-		/*try {
-			
-			connec = DriverManager.getConnection(DB_URL,USERNAME,PASSWORD);
-			
-			//Écrit le schéma sélectionné
-			connec.setSchema("grades");
-			System.out.println(connec.getSchema());
-			
-			test = new Cours();
-			stmt = connec.createStatement();
-			ResultSet rs = stmt.executeQuery(query);
-			while(rs.next()) {
-			     test.setId(rs.getString("cours_id"));
-			     test.setNom(rs.getString("nom"));
-			    out.println("Cours ID: "+test.getId()+" Nom: "+test.getNom());
-				
-			}
-			
-			}
-			catch(SQLException e) {
-				//Écrit le message d'erreur de la connection échouée
-				System.out.println(e.getMessage());
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}*/	
 	}
+		
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
