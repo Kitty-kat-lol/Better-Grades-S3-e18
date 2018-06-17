@@ -5,11 +5,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 </head>
 
 <!-- Nom de la page -->
 <title>Simulate Login</title>
+=======
+<title>Test</title>
+</head>
+>>>>>>> parent of 73b934d... Lien JSP
 =======
 <title>Test</title>
 </head>
