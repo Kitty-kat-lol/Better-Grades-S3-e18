@@ -1,8 +1,6 @@
 package localpage;
 
 import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,15 +28,8 @@ public class JSP extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		response.setContentType("text/html") ;
-		// construction d'un request dispatcher sur la page JSP, qui doit exister
-		// dans la web application courante
-	    RequestDispatcher requestDispatcher = request.getRequestDispatcher("Index.jsp") ;
-	    
-	     // inclusion de cette ressource
-	    requestDispatcher.include(request, response) ;
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.sendRedirect("index.jsp");
 	}
 
 	/**
