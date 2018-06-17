@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MyBatisPackage.mapper.ClassAverageMapper">
+
+	<select id="getAllClassAverageByCIP" parameterType="String" resultType="MyBatisPackage.model.ClassAverage">
+		SELECT
+		cours_id as idCours,
+		cip_etudiant as cipEtudiant,
+		total as total,
+		moyenne as moyenne
+		FROM GRADES.COMPARISONRESULTAVG
+		WHERE CIP_ETUDIANT = #{cipEtudiant}
+	</select>
+
+	<resultMap type="ClassAverage" id="ClassAverageResultSet">
+		<id property="cipEtudiant" column="cip_etudiant" />
+		<result property="idCours" column="cours_id" />
+		<result property="total" column="total" />
+		<result property="moyenne" column="moyenne" />
+	</resultMap>
+
+	
+</mapper>
