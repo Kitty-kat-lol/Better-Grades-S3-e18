@@ -1,13 +1,12 @@
 package MyBatisPackage.model;
 
-public class ClassAverage {
+public class CompetenceAverage {
 	
 	private String idCours;
 	private String cipEtudiant;
+	private int idCompetence;
 	private float total;
 	private float moyenne;
-	private String coteIndividuelle;
-	private String coteMoyenne;
 	
 	public void setIdCours(String cours_id) {
 		this.idCours = cours_id;
@@ -23,6 +22,14 @@ public class ClassAverage {
 	
 	public String getCip() {
 		return this.cipEtudiant;
+	}
+	
+	public void setCompetence(int comp) {
+		this.idCompetence = comp;
+	}
+	
+	public int getCompetence() {
+		return this.idCompetence;
 	}
 	
 	public void setTotal(Float totalInput) {
@@ -41,26 +48,9 @@ public class ClassAverage {
 		return this.moyenne;
 	}
 	
-	public String getCoteIndividuelle() {
-		return this.coteIndividuelle;
-	}
-	
-	public void setCoteIndividuelle(String cote) {
-		this.coteIndividuelle = cote;
-	}
-	
-	public String getCoteMoyenne() {
-		return this.coteMoyenne;
-	}
-	
-	public void setCoteMoyenne(String cote) {
-		this.coteMoyenne = cote;
-	}
-	
 	public String toString() {
-		return this.cipEtudiant + ", " + this.idCours + ", Total: " + this.total + 
-				", Moyenne: " + this.moyenne + ", Cote Individuelle: " + this.coteIndividuelle + ", Cote du groupe: "
-				+ this.coteMoyenne+ "\n";
+		return this.cipEtudiant + ", " + this.idCours + ", Competence: " + this.idCompetence + ", Total: " + this.total + 
+				", Moyenne: " + this.moyenne + "\n";
 	}
 	
 	

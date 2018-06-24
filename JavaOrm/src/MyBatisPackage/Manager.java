@@ -3,9 +3,11 @@ package MyBatisPackage;
 import java.util.List;
 
 import MyBatisPackage.dao.ClassAverageDAO;
+import MyBatisPackage.dao.CompetenceAverageDAO;
 import MyBatisPackage.dao.CoursDAO;
 import MyBatisPackage.dao.UserDAO;
 import MyBatisPackage.model.ClassAverage;
+import MyBatisPackage.model.CompetenceAverage;
 import MyBatisPackage.model.Cours;
 import MyBatisPackage.model.User;
 
@@ -31,6 +33,12 @@ public class Manager {
 		someAverage = test.getAllClassAverageByCIP("LESG2605");
 		
 		System.out.println(someAverage.toString());
+		
+		List<CompetenceAverage> someCompetences;
+		CompetenceAverageDAO someTest = new CompetenceAverageDAO();
+		
+		someCompetences = someTest.getAllCompetenceAverageByCIP("CONT3301");
+		System.out.println(someCompetences.toString());
 		
 	}
 

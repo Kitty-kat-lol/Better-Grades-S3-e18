@@ -11,6 +11,7 @@ import MyBatisPackage.util.MyBatisDAOUtil;
 public class ClassAverageDAO {
 	
 	public List<ClassAverage> getAllClassAverageByCIP(String cip) {
+		cip.toUpperCase();
 		SqlSession sqlSession = MyBatisDAOUtil.getSqlSessionFactory()
 				.openSession();
 		try {
