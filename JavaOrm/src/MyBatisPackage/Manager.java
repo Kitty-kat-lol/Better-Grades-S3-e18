@@ -5,10 +5,12 @@ import java.util.List;
 import MyBatisPackage.dao.ClassAverageDAO;
 import MyBatisPackage.dao.CompetenceAverageDAO;
 import MyBatisPackage.dao.CoursDAO;
+import MyBatisPackage.dao.ExamAverageDAO;
 import MyBatisPackage.dao.UserDAO;
 import MyBatisPackage.model.ClassAverage;
 import MyBatisPackage.model.CompetenceAverage;
 import MyBatisPackage.model.Cours;
+import MyBatisPackage.model.ExamAverage;
 import MyBatisPackage.model.User;
 
 /**
@@ -37,8 +39,14 @@ public class Manager {
 		List<CompetenceAverage> someCompetences;
 		CompetenceAverageDAO someTest = new CompetenceAverageDAO();
 		
-		someCompetences = someTest.getAllCompetenceAverageByCIP("CONT3301");
+		someCompetences = someTest.getAllCompetenceAverageByCIP("CONT3301", "GEN100");
 		System.out.println(someCompetences.toString());
+		
+		List<ExamAverage> someExams;
+		ExamAverageDAO testExams = new ExamAverageDAO();
+		
+		someExams = testExams.getAllExamAverageByCIPAndClass("CONT3301", "GEN100");
+		System.out.println(someExams.toString());
 		
 	}
 

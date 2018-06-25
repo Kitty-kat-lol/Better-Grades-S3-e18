@@ -10,13 +10,13 @@ import MyBatisPackage.util.MyBatisDAOUtil;
 
 public class CompetenceAverageDAO {
 	
-	public List<CompetenceAverage> getAllCompetenceAverageByCIP(String cip) {
+	public List<CompetenceAverage> getAllCompetenceAverageByCIP(String cip, String idCours) {
 		cip.toUpperCase();
 		SqlSession sqlSession = MyBatisDAOUtil.getSqlSessionFactory()
 				.openSession();
 		try {
 			CompetenceAverageMapper competenceAverageMapper = sqlSession.getMapper(CompetenceAverageMapper.class);
-			return competenceAverageMapper.getAllCompetenceAverageByCIP(cip);
+			return competenceAverageMapper.getAllCompetenceAverageByCIP(cip, idCours);
 		} finally {
 			sqlSession.close();
 		}

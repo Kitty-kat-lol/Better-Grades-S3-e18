@@ -1,20 +1,38 @@
 package MyBatisPackage.model;
 
-public class CompetenceAverage {
+public class ExamAverage {
 	
-	private String idCours;
+	private String nomExam;
 	private String cipEtudiant;
 	private int idCompetence;
-	private float total;
+	private float note;
 	private float moyenne;
+	private int idEvaluation;
+	private String idCours;
 	private String nomCompetence;
 	
-	public void setNomCompetence(String nom) {
+	public void setNomCompetence(String nom ) {
 		this.nomCompetence = nom;
 	}
 	
 	public String getNomCompetence() {
 		return this.nomCompetence;
+	}
+	
+	public void setNomExam(String nom) {
+		this.nomExam = nom;
+	}
+	
+	public String getNomExam() {
+		return this.nomExam;
+	}
+	
+	public void setIdEvaluation(int eval) {
+		this.idEvaluation = eval;
+	}
+	
+	public int getIdEvaluation() {
+		return this.idEvaluation;
 	}
 	
 	public void setIdCours(String cours_id) {
@@ -41,12 +59,12 @@ public class CompetenceAverage {
 		return this.idCompetence;
 	}
 	
-	public void setTotal(Float totalInput) {
-		this.total = totalInput;
+	public void setNote(Float noteInput) {
+		this.note = noteInput;
 	};
 	
-	public Float getTotal() {
-		return this.total;
+	public Float getNote() {
+		return this.note;
 	}
 	
 	public void setMoyenne(Float avg) {
@@ -58,7 +76,7 @@ public class CompetenceAverage {
 	}
 	
 	public String toString() {
-		return this.cipEtudiant + ", " + this.idCours + ", " + this.nomCompetence + ", Total: " + this.total + 
+		return this.cipEtudiant + ", " + this.idCours + ", " + this.nomCompetence + ", Note: " + this.note + 
 				", Moyenne: " + this.moyenne + "\n";
 	}
 	
