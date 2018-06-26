@@ -25,7 +25,6 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="MyBatisPackage/mapper/UserMapper.xml" />
 		<mapper resource="MyBatisPackage/mapper/CoursMapper.xml" />
 		<mapper resource="MyBatisPackage/mapper/ClassAverageMapper.xml" />
 		<mapper resource="MyBatisPackage/mapper/CompetenceAverageMapper.xml" />

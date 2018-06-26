@@ -1,5 +1,6 @@
 package localpage;
 
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -13,6 +14,7 @@ import MyBatisPackage.dao.ClassAverageDAO;
 import MyBatisPackage.dao.CoursDAO;
 
 import com.google.inject.servlet.GuiceFilter;
+
 
 /**
  * Servlet implementation class CoursRaw
@@ -36,6 +38,7 @@ public class CoursRaw extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		PrintWriter out = response.getWriter();
+		
 		
 		try {
 			Class.forName("org.postgresql.Driver");

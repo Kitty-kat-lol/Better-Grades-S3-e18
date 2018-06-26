@@ -9,34 +9,32 @@
   <title>Bienvenue</title>
   </head>
 <body>
-
-<script>
+	
 	<%@ page import ="MyBatisPackage.dao.ClassAverageDAO" %>
  	<%@ page import ="MyBatisPackage.dao.CompetenceAverageDAO" %>
  	<%@ page import ="MyBatisPackage.dao.ExamAverageDAO" %>
-</script>
+ 	<%@ page import ="MyBatisPackage.model.*" %>
+ 	<%@ page import ="java.util.List" %>
+ 	
 
-<script>
-	var cour_act = "GEN100";
-    var cip_act = "CONT3301";
-</script>
-<script>
+	
+
+
+
+	<% String cour_act = "GEN100";
+    String cip_act = "CONT3301"; 
+
     ClassAverage Class_act;
     List<ClassAverage> Class_list;
 	ClassAverageDAO test = new ClassAverageDAO();
 	Class_act = test.getClassAverageByCIPAndCoursId(cip_act, cour_act);
-    Class_list = test.getAllClassAverageByCIP(cip_act);
-</script>
+    Class_list = test.getAllClassAverageByCIP(cip_act); %>
 
-<h1 id="titre"></h1>
-<script>
-  document.getElementById("titre").innerHTML =cour_act;
-</script>
 
-<p id="cip"></p>
-<script>
-document.getElementById("cip").innerHTML ="Utilisateur : " + cip_act;
-</script>
+<h1> <%= cour_act %></h1>
+
+
+<p><%= cip_act %> </p>
 
 <p id="NOW"></p>
 <script>
@@ -66,19 +64,19 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
     <th> <h3>Ponderation Competence</h3> </th>
   </tr>
 
-  <script>
-  	List<ExamAverage> evals;
+
+  	<% List<ExamAverage> evals;
 	  ExamAverageDAO testExams = new ExamAverageDAO();
-      evals = testExams.getAllExamsByCIPAndClass(cip_act, cour_act);
+      evals = testExams.getAllExamAverageByCIPAndClass(cip_act, cour_act);
     for (int i = 0; i < evals.size(); i++) {
-      %> </script>
+      %> 
   <tr>
-    <td>A <script> evals.get(i).getNomExam()</script> </td>
-    <td>10% <script> evals.get(i).getTotal() %> </script> </td>
-    <td>30% <script> evals.get(i).getMoyenne() %> </script> </td>
-    <td>10/600 <script> evals.get(i).getPonderation() %> </script> </td>
+    <td> <%=evals.get(i).getNomExam() %></td>
+    <td><%= evals.get(i).getNote() %>  </td>
+    <td> <%=evals.get(i).getMoyenne() %>  </td>
+    <td> <%=evals.get(i).getPonderation() %>  </td>
   </tr>
-  <script> <% } %> </script>
+   <% } %> 
 
 </table>
 
@@ -86,10 +84,8 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 
 <table>
 	<tr>
-    <!–– Boutton1 ––>
-	<button type="button" onclick="precedant()">Cours précédent!</button>
-    <!–– Boutton2 ––>
-	<button type="button" onclick="suivant()">Cours suivant!</button>
+    <td><button type="button" onclick="precedant()">Cours précédent!</button> </td>
+    <td><button type="button" onclick="suivant()">Cours suivant!</button> </td>	
     <tr>
 </table>
 

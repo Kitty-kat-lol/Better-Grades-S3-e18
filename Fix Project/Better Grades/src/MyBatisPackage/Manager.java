@@ -1,4 +1,4 @@
-
+package MyBatisPackage;
 
 import java.util.List;
 

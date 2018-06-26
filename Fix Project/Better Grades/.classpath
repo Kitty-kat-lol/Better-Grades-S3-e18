@@ -13,25 +13,25 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/mybatis-3.4.6.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/postgresql-42.2.2.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/cas-client-core-3.4.1.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/guice-servlet-4.2.0.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/guice-4.2.0.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/mybatis-guice-3.10.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/jackson-annotations-2.8.0.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/jackson-core-2.8.0.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/jackson-databind-2.8.8.1.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/slf4j-api-1.8.0-beta2.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/slf4j-simple-1.8.0-beta2.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/javax.servlet-api-4.0.1.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/javax.inject-1.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/animal-sniffer-annotations-1.17.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/aopalliance-1.0.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/checker-compat-qual-2.0.0.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/error_prone_annotation-2.1.3.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/guava-23.6-android.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/j2objc-annotations-1.1.jar"/>
-	<classpathentry kind="lib" path="D:/Github_projects/Better-Grades-S3-e18/Fix Project/Better Grades/lib/jsr305-1.3.9.jar"/>
+	<classpathentry kind="lib" path="lib/animal-sniffer-annotations-1.17.jar"/>
+	<classpathentry kind="lib" path="lib/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/cas-client-core-3.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/checker-compat-qual-2.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/error_prone_annotation-2.1.3.jar"/>
+	<classpathentry kind="lib" path="lib/guava-23.6-android.jar"/>
+	<classpathentry kind="lib" path="lib/guice-4.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/guice-servlet-4.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/j2objc-annotations-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-annotations-2.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-core-2.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.8.8.1.jar"/>
+	<classpathentry kind="lib" path="lib/javax.inject-1.jar"/>
+	<classpathentry kind="lib" path="lib/javax.servlet-api-4.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/jsr305-1.3.9.jar"/>
+	<classpathentry kind="lib" path="lib/mybatis-3.4.6.jar"/>
+	<classpathentry kind="lib" path="lib/mybatis-guice-3.10.jar"/>
+	<classpathentry kind="lib" path="lib/postgresql-42.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.8.0-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-simple-1.8.0-beta2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

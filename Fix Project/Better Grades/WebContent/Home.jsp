@@ -10,7 +10,9 @@
 </head>
 <body>
 
-<script><%@ page import ="MyBatisPackage.dao.ClassAverageDAO" %></script>
+<%@ page import ="MyBatisPackage.dao.ClassAverageDAO" %>
+<%@ page import ="java.util.List" %>
+<%@ page import ="MyBatisPackage.model.ClassAverage" %>
 
 <h1>Welcome to Better Grades</h1>
 <br/>
@@ -26,23 +28,27 @@
         <th> <h3>Expected GPA (letter)</h3> </th>
     </tr>
 
-<script>
-list<ClassAverage> = class_list;
-ClassAverageDAO temp = new ClassAverageDAO();
-class_list = temp.getAllClassAverageByCIP("LESG2605");
+	<%
+	List<ClassAverage> class_list;
+	ClassAverageDAO temp = new ClassAverageDAO();
+	class_list = temp.getAllClassAverageByCIP("LESG2605");
 for (int i = 0; i < class_list.size(); i++) {
-</script>
+	%>
 	<tr>
-   <td> <button>GENtem<script> class_list.get(i).getId()</script> </button></td>
-   <td> 50%<script> class_list.get(i).getTotal()</script> </td>
-   <td> 50%<script> class_list.get(i).getMoyenne()</script> </td>
-   <td> D<script> class_list.get(i).getCoteIndividuelle()</script> </td>
+   <td> <button><%= class_list.get(i).getIdCours() %>  </button></td>
+   <td>  <%= class_list.get(i).getTotal() %> </td>
+   <td> <%= class_list.get(i).getMoyenne()  %> </td>
+   <td> <%= class_list.get(i).getCoteIndividuelle() %> </td>
    </tr>
-<script> } </script>
-
+<% } %> 
 
     </table>
 
+
+	
+    
+    
+    
 
 </body>
 </html>
