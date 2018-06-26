@@ -8,6 +8,9 @@
 		<typeAlias type="MyBatisPackage.model.User" alias="User"></typeAlias>
 		<typeAlias type="MyBatisPackage.model.Cours" alias="Cours"></typeAlias>
 		<typeAlias type="MyBatisPackage.model.ClassAverage" alias="ClassAverage"></typeAlias>
+		<typeAlias type="MyBatisPackage.model.CompetenceAverage" alias="CompetenceAverage"></typeAlias>
+		<typeAlias type="MyBatisPackage.model.ExamAverage" alias="ExamAverage"></typeAlias>
+		<typeAlias type="MyBatisPackage.model.SessionAverage" alias="SessionAverage"></typeAlias>
 		<typeAlias type="MyBatisPackage.model.RequestManager" alias="RequestManager"></typeAlias>
 	</typeAliases>
 	<environments default="development">
@@ -25,5 +28,8 @@
 		<mapper resource="MyBatisPackage/mapper/UserMapper.xml" />
 		<mapper resource="MyBatisPackage/mapper/CoursMapper.xml" />
 		<mapper resource="MyBatisPackage/mapper/ClassAverageMapper.xml" />
+		<mapper resource="MyBatisPackage/mapper/CompetenceAverageMapper.xml" />
+		<mapper resource="MyBatisPackage/mapper/ExamAverageMapper.xml" />
+		<mapper resource="MyBatisPackage/mapper/SessionAverageMapper.xml" />
 	</mappers>
 </configuration>

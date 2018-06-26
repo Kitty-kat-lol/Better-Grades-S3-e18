@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MyBatisPackage.mapper.CompetenceAverageMapper">
+
+	<select id="getAllCompetenceAverageByCIP" parameterType="Map" resultType="MyBatisPackage.model.CompetenceAverage">
+		SELECT
+		cours_id as idCours,
+		cip_etudiant as cipEtudiant,
+		competence_id as idCompetence,
+		total as total,
+		moyenne as moyenne,
+		description as nomCompetence
+		FROM GRADES.COMPETENCERESULTAVG
+		WHERE CIP_ETUDIANT = #{cip_etudiant}
+		AND cours_id = #{cours_id}
+	</select>
+
+	<resultMap type="CompetenceAverage" id="CompetenceAverageResultSet">
+		<id property="cipEtudiant" column="cip_etudiant" />
+		<result property="idCours" column="cours_id" />
+		<result property="idCompetence" column="competence_id" />
+		<result property="total" column="total" />
+		<result property="moyenne" column="moyenne" />
+		<result property="nomCompetence" column="description" />
+		
+	</resultMap>
+
+	
+</mapper>
