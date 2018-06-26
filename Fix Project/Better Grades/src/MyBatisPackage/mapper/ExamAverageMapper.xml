@@ -15,7 +15,7 @@
 		evaluation_id as idEvaluation,
 		ponderation as ponderation,
 		description as nomCompetence
-		FROM GRADES.EXAMRESULTAVG
+		FROM PUBLIC_VIEWS.EXAMRESULTAVG
 		WHERE CIP_ETUDIANT = #{cip_etudiant}
 		AND cours_id = #{cours_id}
 	</select>

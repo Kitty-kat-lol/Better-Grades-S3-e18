@@ -7,7 +7,7 @@
 	<select id="getSessionByCIP" parameterType="String" resultType="MyBatisPackage.model.SessionAverage">
 		SELECT cip_etudiant as cipEtudiant,
 		cotesession as coteSession
-		FROM GRADES.SESSION
+		FROM PUBLIC_VIEWS.SESSION
 		WHERE CIP_ETUDIANT = #{cipEtudiant}
 	</select>
 
