@@ -9,9 +9,9 @@
 <title>Bienvenue</title>
 </head>
 <body>
-<%@ page import ="MyBatisPackage.dao.CoursDAO" 
+<%@ page import ="MyBatisPackage.dao.CoursDAO" %>
+<%@ page import ="MyBatisPackage.dao.ClassAverageDAO" %>
 
-%>
 <h1><%
 	out.println("Welcome to Better Grades,");
 	out.println("Overall GPA: ,");
@@ -38,10 +38,13 @@
 		
 		
 CoursDAO cours = new CoursDAO();
+ClassAverageDAO averages = new ClassAverageDAO();
+averages.getAllClassAverageByCIP("LESG2605");
 for (int i = 0; i < cours.getAllCourss().size(); i++) {
 %>
 	<tr>
    <td> <%= cours.getAllCourss().get(i).getId() %> </td>
+   <td> <%= cours.getAllCourss().get(i).getNom() %> </td>
    <td> <%= cours.getAllCourss().get(i).getNom() %> </td>
    </tr>
 <% } %>

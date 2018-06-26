@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import MyBatisPackage.dao.ClassAverageDAO;
 import MyBatisPackage.dao.CoursDAO;
 
+import com.google.inject.servlet.GuiceFilter;
+
 /**
  * Servlet implementation class CoursRaw
  */
