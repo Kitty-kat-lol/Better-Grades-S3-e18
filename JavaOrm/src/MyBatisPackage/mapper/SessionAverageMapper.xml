@@ -6,16 +6,14 @@
 
 	<select id="getSessionByCIP" parameterType="String" resultType="MyBatisPackage.model.SessionAverage">
 		SELECT cip_etudiant as cipEtudiant,
-		cotesession as coteSession,
-		cotesessionmoyenne as coteSessionMoyenne
-		FROM GRADES.SESSIONRESULTAVG
+		cotesession as coteSession
+		FROM GRADES.SESSION
 		WHERE CIP_ETUDIANT = #{cipEtudiant}
 	</select>
 
 	<resultMap type="SessionAverage" id="SessionAverageResultSet">
 		<id property="cipEtudiant" column="cip_etudiant" />
 		<result property="coteSession" column="cotesession" />
-		<result property="coteSessionMoyenne" column="cotesessionmoyenne" />
 		
 	</resultMap>
 
