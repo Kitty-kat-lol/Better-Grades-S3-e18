@@ -33,35 +33,37 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 </script>
 
 <script>
- <%@ page import ="MyBatisPackage.dao.CoursDAO" %>
+ <%@ page import ="MyBatisPackage.dao.CompetenceAverageDAO" %>
+ <%@ page import ="MyBatisPackage.dao.ExamAverageDAO" %>
 </script>
 
 <table border="1" cellpadding="10">
 
   <tr>
     <th> <h3>Évaluation</h3></th>
-    <th> <h3>competence 1</h3> </th>
-    <th> <h3>competence 2</h3> </th>
-    <th> <h3>competence 3</h3> </th>
-    <th> <h3>Note Totale</h3> </th>
+    <th> <h3>note competence</h3> </th>
+    <th> <h3>ponderation competence</h3> </th>
+    <th> <h3>note cours</h3> </th>
     <th> <h3>Moyenne groupe</h3> </th>
-    <th> <h3>Ponderation</h3> </th>
+    <th> <h3>Ponderation cours</h3> </th>
     <th> <h3>Lettre</h3> </th>
   </tr>
 
   <script> <%
-      CoursDAO cours = new CoursDAO();
-    for (int i = 0; i < cours.getAllCourss().size(); i++) {
+	  CompetenceAverageDAO someTest = new CompetenceAverageDAO();
+	  ExamAverageDAO testExams = new ExamAverageDAO();
+	  CompetenceDAO comp = new CompetenceDAO();
+	  ExamDAO exam = new ExamDAO();
+    for (int i = 0; i < exam.getAllExams().size(); i++) {
       %> </script>
   <tr>
-    <td>A <script> <%= cours.getAlleval().get(i).getNom() %> </script> </td>
-    <td>0/10 <script> <%= cours.getAlleval().get(i).getNote() %> </script> </td>
-    <td>5/10 <script> <%= cours.getAlleval().get(i).getNote() %> </script> </td>
-    <td>5/10 <script> <%= cours.getAlleval().get(i).getNote() %> </script> </td>
-    <td>10/30 <script> <%= cours.getAlleval().get(i).getNote() %> </script> </td>
-    <td>15/30 <script> <%= cours.getAlleval().get(i).getMoyG() %> </script> </td>
-    <td>10/600 <script> <%= cours.getAlleval().get(i).getPond() %> </script> </td>
-    <td>E <script> <%= cours.getAlleval().get(i).getCote() %> </script> </td>
+    <td>A <script> <%= exam.getAllExams().get(i).getNom() %> </script> </td>
+    <td>0/10 <script> <%= exam.getAllExams().get(i).getNoteCompetence() %> </script> </td>
+    <td>5/30 <script> <%= exam.getAllExams().get(i).getPonderationCompetence() %> </script> </td>
+    <td>10/30 <script> <%= exam.getAllExams().get(i).getNote() %> </script> </td>
+    <td>15/30 <script> <%= testExams.getAllExamAverageByCIPAndClass("CONT3301", "GEN100").get(i).getNote() %> </script> </td>
+    <td>10/600 <script> <%= exam.getAllExams().get(i).getPonderation() %> </script> </td>
+    <td>E <script> <%= exam.getAllExams().get(i).getCote() %> </script> </td>
   </tr>
   <script> <% } %> </script>
 
@@ -89,7 +91,6 @@ function suivant() {
     <!-- lien cours suivant -->
 }
 </script>
-
 
 </body>
 </html>
