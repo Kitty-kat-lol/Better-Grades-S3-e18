@@ -7,13 +7,12 @@ import MyBatisPackage.dao.CompetenceAverageDAO;
 import MyBatisPackage.dao.CoursDAO;
 import MyBatisPackage.dao.ExamAverageDAO;
 import MyBatisPackage.dao.SessionAverageDAO;
-import MyBatisPackage.dao.UserDAO;
+
 import MyBatisPackage.model.ClassAverage;
 import MyBatisPackage.model.CompetenceAverage;
 import MyBatisPackage.model.Cours;
 import MyBatisPackage.model.ExamAverage;
 import MyBatisPackage.model.SessionAverage;
-import MyBatisPackage.model.User;
 
 /**
  * 
