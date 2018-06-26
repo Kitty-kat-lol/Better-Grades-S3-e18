@@ -35,33 +35,24 @@
 for (int i = 0; i < class_list.size(); i++) {
 	%>
 	<tr>
-<<<<<<< HEAD
+
    <td> <button><%= class_list.get(i).getIdCours() %>  </button></td>
    <td>  <%= class_list.get(i).getTotal() %> </td>
    <td> <%= class_list.get(i).getMoyenne()  %> </td>
    <td> <%= class_list.get(i).getCoteIndividuelle() %> </td>
    </tr>
-<% } %> 
-   <td> 50%<script> =class_list.get(i).getMoyenne()</script> </td>
-   </tr>
-<script> } </script>
->>>>>>> 3ee1f0f471e6b5994b97117a26fe76156762b38b
+<% } %>   
+
 
     </table>
 
 
-<<<<<<< HEAD
+
 	
     
     
     
-=======
-    <script>
-    function active(String cours) {
-        <!-- lien cours active -->
-        }
-    </script>
->>>>>>> 3ee1f0f471e6b5994b97117a26fe76156762b38b
+
 
 </body>
 </html>
