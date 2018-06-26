@@ -52,18 +52,16 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
   <script> <%
 	  CompetenceAverageDAO someTest = new CompetenceAverageDAO();
 	  ExamAverageDAO testExams = new ExamAverageDAO();
-	  CompetenceDAO comp = new CompetenceDAO();
-	  ExamDAO exam = new ExamDAO();
-    for (int i = 0; i < exam.getAllExams().size(); i++) {
+    for (int i = 0; i < testExams.getAllExams().size(); i++) {
       %> </script>
   <tr>
-    <td>A <script> <%= exam.getAllExams().get(i).getNom() %> </script> </td>
-    <td>0/10 <script> <%= exam.getAllExams().get(i).getNoteCompetence() %> </script> </td>
-    <td>5/30 <script> <%= exam.getAllExams().get(i).getPonderationCompetence() %> </script> </td>
-    <td>10/30 <script> <%= exam.getAllExams().get(i).getNote() %> </script> </td>
-    <td>15/30 <script> <%= testExams.getAllExamAverageByCIPAndClass("CONT3301", "GEN100").get(i).getNote() %> </script> </td>
-    <td>10/600 <script> <%= exam.getAllExams().get(i).getPonderation() %> </script> </td>
-    <td>E <script> <%= exam.getAllExams().get(i).getCote() %> </script> </td>
+    <td>A <script> <%= testExams.getAllExamAverageByCIPAndClass("CONT3301", "GEN100").get(i).getNomExam() %> </script> </td>
+    <td>0/10 <script> <%= someTest.getAllCompetences().get(i).getTotal() %> </script> </td>
+    <td>5/30 <script> <%= testExams.getAllExamAverageByCIPAndClass("CONT3301", "GEN100").get(i).getPonderationCompetence() %> </script> </td> <!-- fonction non-existante-->
+    <td>10/30 <script> <%= testExams.getAllExamAverageByCIPAndClass("CONT3301", "GEN100").get(i).getNote() %> </script> </td>
+    <td>15/30 <script> <%= testExams.getAllExamAverageByCIPAndClass("CONT3301", "GEN100").get(i).getMoyenne() %> </script> </td>
+    <td>10/600 <script> <%= testExams.getAllExamAverageByCIPAndClass("CONT3301", "GEN100").get(i).getPonderation() %> </script> </td> <!-- fonction non-existante-->
+    <td>E <script> <%= testExams.getAllExamAverageByCIPAndClass("CONT3301", "GEN100").get(i).getCote() %> </script> </td> <!-- fonction non-existante-->
   </tr>
   <script> <% } %> </script>
 
