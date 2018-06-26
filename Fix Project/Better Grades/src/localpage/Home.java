@@ -39,6 +39,9 @@ public class Home extends HttpServlet {
 		// dans la web application courante
 	    RequestDispatcher requestDispatcher = request.getRequestDispatcher("Home.jsp") ;
 	    
+	    String cip = request.getUserPrincipal().toString();
+	    response.getWriter().println(cip);
+	    
 	     // inclusion de cette ressource
 	    requestDispatcher.include(request, response) ;
 	}

@@ -16,6 +16,18 @@
 		WHERE CIP_ETUDIANT = #{cip}
 		AND cours_id = #{coursId}
 	</select>
+	
+	<select id="getAllClassAverageByCIP" parameterType="map" resultType="MyBatisPackage.model.ClassAverage">
+		SELECT
+		cours_id as idCours,
+		cip_etudiant as cipEtudiant,
+		total as total,
+		moyenne as moyenne,
+		coteindividuelle as coteIndividuelle,
+		cotemoyenne as coteMoyenne
+		FROM GRADES.COMPARISONRESULTAVG
+		WHERE CIP_ETUDIANT = #{cip}
+	</select>
 
 	<resultMap type="ClassAverage" id="ClassAverageResultSet">
 		<id property="cipEtudiant" column="cip_etudiant" />

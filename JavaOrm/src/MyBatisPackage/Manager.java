@@ -27,16 +27,18 @@ public class Manager {
 
 	public static void main(String[] args) {
 		
-		//List<ClassAverage> someAverage;
+		List<ClassAverage> someAverageT;
 		ClassAverage someAverage;
 		ClassAverageDAO test = new ClassAverageDAO();
 		
-		//someAverage = test.getAllClassAverageByCIP("CONT3301");
+		someAverageT = test.getAllClassAverageByCIP("CONT3301");
+		System.out.println(someAverageT.toString());
 		someAverage = test.getClassAverageByCIPAndCoursId("CONT3301", "GIF232");
 		
 		System.out.println(someAverage.toString());
 		
-		//someAverage = test.getAllClassAverageByCIP("LESG2605");
+		someAverageT = test.getAllClassAverageByCIP("LESG2605");
+		System.out.println(someAverageT.toString());
 		someAverage = test.getClassAverageByCIPAndCoursId("LESG2605", "GEN100");
 		
 		System.out.println(someAverage.toString());
