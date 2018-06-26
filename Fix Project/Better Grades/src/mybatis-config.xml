@@ -5,13 +5,13 @@
 <configuration>
 	<properties resource="MyBatisPackage/resources/db.properties" />
 	<typeAliases>
-		<typeAlias type="MyBatisPackage.model.User" alias="User"></typeAlias>
+		
 		<typeAlias type="MyBatisPackage.model.Cours" alias="Cours"></typeAlias>
 		<typeAlias type="MyBatisPackage.model.ClassAverage" alias="ClassAverage"></typeAlias>
 		<typeAlias type="MyBatisPackage.model.CompetenceAverage" alias="CompetenceAverage"></typeAlias>
 		<typeAlias type="MyBatisPackage.model.ExamAverage" alias="ExamAverage"></typeAlias>
 		<typeAlias type="MyBatisPackage.model.SessionAverage" alias="SessionAverage"></typeAlias>
-		<typeAlias type="MyBatisPackage.model.RequestManager" alias="RequestManager"></typeAlias>
+		
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
