@@ -10,6 +10,9 @@
   </head>
 <body>
 
+ <%@ page import ="MyBatisPackage.dao.CompetenceAverageDAO" %>
+ <%@ page import ="MyBatisPackage.dao.ExamAverageDAO" %>
+
 <h1>Détails Cours :</h1>
 
 <p id="NOM_Cours"></p>
@@ -32,10 +35,11 @@ document.getElementById("MOYG").innerHTML ="Moyenne du groupe dans ce cours : 30
 document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 </script>
 
-<script>
- <%@ page import ="MyBatisPackage.dao.CompetenceAverageDAO" %>
- <%@ page import ="MyBatisPackage.dao.ExamAverageDAO" %>
-</script>
+
+
+
+ 
+
 
 <table border="1" cellpadding="10">
 
@@ -49,11 +53,11 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
     <th> <h3>Lettre</h3> </th>
   </tr>
 
-  <script> <%
-	  CompetenceAverageDAO someTest = new CompetenceAverageDAO();
+  <% 
+ 	  CompetenceAverageDAO someTest = new CompetenceAverageDAO();
 	  ExamAverageDAO testExams = new ExamAverageDAO();
     for (int i = 0; i < testExams.getAllExams().size(); i++) {
-      %> </script>
+      %>
   <tr>
     <td>A <script> <%= testExams.getAllExamAverageByCIPAndClass("CONT3301", "GEN100").get(i).getNomExam() %> </script> </td>
     <td>0/10 <script> <%= someTest.getAllCompetences().get(i).getTotal() %> </script> </td>
