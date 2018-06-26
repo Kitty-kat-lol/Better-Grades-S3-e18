@@ -12,7 +12,7 @@
 		total as total,
 		moyenne as moyenne,
 		description as nomCompetence
-		FROM GRADES.COMPETENCERESULTAVG
+		FROM PUBLIC_VIEWS.COMPETENCERESULTAVG
 		WHERE CIP_ETUDIANT = #{cip_etudiant}
 		AND cours_id = #{cours_id}
 	</select>

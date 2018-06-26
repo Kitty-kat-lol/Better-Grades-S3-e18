@@ -12,7 +12,7 @@
 		moyenne as moyenne,
 		coteindividuelle as coteIndividuelle,
 		cotemoyenne as coteMoyenne
-		FROM GRADES.COMPARISONRESULTAVG
+		FROM PUBLIC_VIEWS.COMPARISONRESULTAVG
 		WHERE CIP_ETUDIANT = #{cip}
 		AND cours_id = #{coursId}
 	</select>
@@ -25,7 +25,7 @@
 		moyenne as moyenne,
 		coteindividuelle as coteIndividuelle,
 		cotemoyenne as coteMoyenne
-		FROM GRADES.COMPARISONRESULTAVG
+		FROM PUBLIC_VIEWS.COMPARISONRESULTAVG
 		WHERE CIP_ETUDIANT = #{cip}
 	</select>
 
