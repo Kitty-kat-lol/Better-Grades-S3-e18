@@ -34,10 +34,12 @@
             <param-name>casServerLoginUrl</param-name>
             <param-value>https://cas.usherbrooke.ca/login</param-value>
         </init-param>
+        
         <init-param>
             <param-name>serverName</param-name>
             <param-value>http://localhost:8080</param-value>
         </init-param>
+        
     </filter>
     <filter-mapping>
         <filter-name>CAS Authentication Filter</filter-name>
