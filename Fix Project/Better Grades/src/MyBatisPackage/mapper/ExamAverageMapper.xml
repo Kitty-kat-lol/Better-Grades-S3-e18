@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MyBatisPackage.mapper.ExamAverageMapper">
+
+	<select id="getAllExamAverageByCIPAndClass" parameterType="Map" resultType="MyBatisPackage.model.ExamAverage">
+		SELECT
+		cours_id as idCours,
+		cip_etudiant as cipEtudiant,
+		competence_id as idCompetence,
+		note as note,
+		moyenne as moyenne,
+		nom as nomExam,
+		evaluation_id as idEvaluation,
+		ponderation as ponderation,
+		description as nomCompetence
+		FROM GRADES.EXAMRESULTAVG
+		WHERE CIP_ETUDIANT = #{cip_etudiant}
+		AND cours_id = #{cours_id}
+	</select>
+
+	<resultMap type="ExamAverage" id="ExamAverageResultSet">
+		<id property="cipEtudiant" column="cip_etudiant" />
+		<result property="idCours" column="cours_id" />
+		<result property="idCompetence" column="competence_id" />
+		<result property="note" column="note" />
+		<result property="moyenne" column="moyenne" />
+		<result property="nomExam" column="nom" />
+		<result property="idEvaluation" column="evaluation_id" />
+		<result property="nomCompetence" column="description" />
+		<result property="ponderation" column="ponderation" />
+		
+	</resultMap>
+
+	
+</mapper>

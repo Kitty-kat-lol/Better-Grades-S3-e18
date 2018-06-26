@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MyBatisPackage.mapper.SessionAverageMapper">
+
+	<select id="getSessionByCIP" parameterType="String" resultType="MyBatisPackage.model.SessionAverage">
+		SELECT cip_etudiant as cipEtudiant,
+		cotesession as coteSession
+		FROM GRADES.SESSION
+		WHERE CIP_ETUDIANT = #{cipEtudiant}
+	</select>
+
+	<resultMap type="SessionAverage" id="SessionAverageResultSet">
+		<id property="cipEtudiant" column="cip_etudiant" />
+		<result property="coteSession" column="cotesession" />
+		
+	</resultMap>
+
+	
+</mapper>
