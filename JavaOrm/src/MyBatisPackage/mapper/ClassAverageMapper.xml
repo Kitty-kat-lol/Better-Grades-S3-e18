@@ -4,7 +4,7 @@
 
 <mapper namespace="MyBatisPackage.mapper.ClassAverageMapper">
 
-	<select id="getAllClassAverageByCIP" parameterType="String" resultType="MyBatisPackage.model.ClassAverage">
+	<select id="getClassAverageByCIPAndCoursId" parameterType="map" resultType="MyBatisPackage.model.ClassAverage">
 		SELECT
 		cours_id as idCours,
 		cip_etudiant as cipEtudiant,
@@ -13,7 +13,8 @@
 		coteindividuelle as coteIndividuelle,
 		cotemoyenne as coteMoyenne
 		FROM GRADES.COMPARISONRESULTAVG
-		WHERE CIP_ETUDIANT = #{cipEtudiant}
+		WHERE CIP_ETUDIANT = #{cip}
+		AND cours_id = #{coursId}
 	</select>
 
 	<resultMap type="ClassAverage" id="ClassAverageResultSet">
