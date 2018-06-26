@@ -10,6 +10,11 @@ public class ExamAverage {
 	private int idEvaluation;
 	private String idCours;
 	private String nomCompetence;
+	private int ponderation;
+	
+	public int getPonderation() {
+		return this.ponderation;
+	}
 	
 	public void setNomCompetence(String nom ) {
 		this.nomCompetence = nom;
@@ -76,8 +81,8 @@ public class ExamAverage {
 	}
 	
 	public String toString() {
-		return this.cipEtudiant + ", " + this.idCours + ", " + this.nomCompetence + ", Note: " + this.note + 
-				", Moyenne: " + this.moyenne + "\n";
+		return this.cipEtudiant + ", " + this.idCours + ", Exam: " +this.nomExam + ", "+ this.nomCompetence + ", Note: " + this.note + 
+				", Moyenne: " + this.moyenne + ", Pondération: " + this.ponderation + "\n";
 	}
 	
 	

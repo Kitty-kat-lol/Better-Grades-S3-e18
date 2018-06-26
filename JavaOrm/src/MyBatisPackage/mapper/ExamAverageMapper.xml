@@ -13,6 +13,7 @@
 		moyenne as moyenne,
 		nom as nomExam,
 		evaluation_id as idEvaluation,
+		ponderation as ponderation,
 		description as nomCompetence
 		FROM GRADES.EXAMRESULTAVG
 		WHERE CIP_ETUDIANT = #{cip_etudiant}
@@ -28,6 +29,7 @@
 		<result property="nomExam" column="nom" />
 		<result property="idEvaluation" column="evaluation_id" />
 		<result property="nomCompetence" column="description" />
+		<result property="ponderation" column="ponderation" />
 		
 	</resultMap>
 
