@@ -33,16 +33,21 @@ class_list = temp.getAllClassAverageByCIP("LESG2605");
 for (int i = 0; i < class_list.size(); i++) {
 </script>
 	<tr>
-   <td> <button>GENtem<script> class_list.get(i).getId()</script> </button></td>
+   <td> <button type="button" onclick="active(class_list.get(i).getId())">>GENtem<script> class_list.get(i).getId()</script> </button></td>
    <td> 50%<script> class_list.get(i).getTotal()</script> </td>
    <td> 50%<script> class_list.get(i).getMoyenne()</script> </td>
    <td> D<script> class_list.get(i).getCoteIndividuelle()</script> </td>
    </tr>
 <script> } </script>
 
-
     </table>
 
+
+    <script>
+    function active(String cours) {
+        <!-- lien cours active -->
+        }
+    </script>
 
 </body>
 </html>
