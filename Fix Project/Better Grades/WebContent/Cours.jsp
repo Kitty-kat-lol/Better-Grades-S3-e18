@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-	8859-1">
-  <title>Bienvenue</title>
+  <title>Cours</title>
   </head>
 <body>
 
