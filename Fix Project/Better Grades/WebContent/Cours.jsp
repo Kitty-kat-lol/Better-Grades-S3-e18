@@ -10,6 +10,9 @@
   </head>
 <body>
 
+ <%@ page import ="MyBatisPackage.dao.CompetenceAverageDAO" %>
+ <%@ page import ="MyBatisPackage.dao.ExamAverageDAO" %>
+
 <h1>Détails Cours :</h1>
 
 <p id="NOM_Cours"></p>
@@ -32,10 +35,7 @@ document.getElementById("MOYG").innerHTML ="Moyenne du groupe dans ce cours : 30
 document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 </script>
 
-<script>
- <%@ page import ="MyBatisPackage.dao.CompetenceAverageDAO" %>
- <%@ page import ="MyBatisPackage.dao.ExamAverageDAO" %>
-</script>
+
 
 <table border="1" cellpadding="10">
 
