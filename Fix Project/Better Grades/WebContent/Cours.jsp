@@ -21,7 +21,7 @@
 
 
 
-	<% String cour_act = "GEN100";
+	<% String cour_act= (String)request.getAttribute("myname");
     String cip_act = "CONT3301"; 
 
     ClassAverage Class_act;
@@ -29,8 +29,8 @@
 	ClassAverageDAO test = new ClassAverageDAO();
 	Class_act = test.getClassAverageByCIPAndCoursId(cip_act, cour_act);
     Class_list = test.getAllClassAverageByCIP(cip_act); %>
-<% String name = (String)request.getAttribute("myname"); %>
-<h1><%=name %></h1>
+
+
 
 <h1> <%= cour_act %></h1>
 
