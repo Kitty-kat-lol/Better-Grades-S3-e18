@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class JSPConnexion
  */
-@WebServlet("/JSPConnexion")
+@WebServlet("/cours")
 public class JSPConnexion extends HttpServlet {
 		private static final long serialVersionUID = 1L;
 	       
@@ -29,8 +29,10 @@ public class JSPConnexion extends HttpServlet {
 		 */
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			String NomdeCours = request.getParameter("NomdeCours");
+			String cip = request.getUserPrincipal().toString().toUpperCase();
 			RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Cours.jsp");
 			request.setAttribute("myname",NomdeCours);
+			request.setAttribute("cip",cip);
 			RequetsDispatcherObj.forward(request, response);
 		}
 

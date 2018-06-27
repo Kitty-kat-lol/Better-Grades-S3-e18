@@ -14,7 +14,9 @@
 <%@ page import ="java.util.List" %>
 <%@ page import ="MyBatisPackage.model.ClassAverage" %>
 
-<h1>Welcome to Better Grades</h1>
+<% String cip=(String)request.getAttribute("cip").toString().toUpperCase(); %>
+
+<h1>Welcome to Better Grades, <%= cip %> </h1>
 <br/>
 <h2>Here are your classes:</h2>
 
@@ -29,14 +31,15 @@
     </tr>
 
 	<%
+	
 	List<ClassAverage> class_list;
 	ClassAverageDAO temp = new ClassAverageDAO();
-	class_list = temp.getAllClassAverageByCIP("LESG2605");
+	class_list = temp.getAllClassAverageByCIP(cip);
 for (int i = 0; i < class_list.size(); i++) {
 	%>
 	<tr>
 
-<td> <form action="JSPConnexion" method="post">
+<td> <form action="cours" method="post">
 	<input type="hidden" name="NomdeCours" size="20" value=<%= class_list.get(i).getIdCours() %> >
     <input type="submit" value=<%= class_list.get(i).getIdCours() %>  />
 </form></td> 
