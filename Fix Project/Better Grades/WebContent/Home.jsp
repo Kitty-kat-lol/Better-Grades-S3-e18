@@ -36,7 +36,11 @@ for (int i = 0; i < class_list.size(); i++) {
 	%>
 	<tr>
 
-   <td> <button><%= class_list.get(i).getIdCours() %>  </button></td>
+<td> <form action="JSPConnexion" method="post">
+	<input type="hidden" name="NomdeCours" size="20" value=<%= class_list.get(i).getIdCours() %> >
+    <input type="submit" value=<%= class_list.get(i).getIdCours() %>  />
+</form></td> 
+
    <td>  <%= class_list.get(i).getTotal() %> </td>
    <td> <%= class_list.get(i).getMoyenne()  %> </td>
    <td> <%= class_list.get(i).getCoteIndividuelle() %> </td>
