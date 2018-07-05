@@ -21,14 +21,15 @@
 
 
 
-	<% String cour_act = "GEN100";
-    String cip_act = "CONT3301"; 
+	<% String cour_act= (String)request.getAttribute("myname").toString().toUpperCase();
+    String cip_act = (String)request.getAttribute("cip").toString().toUpperCase(); 
 
     ClassAverage Class_act;
     List<ClassAverage> Class_list;
 	ClassAverageDAO test = new ClassAverageDAO();
 	Class_act = test.getClassAverageByCIPAndCoursId(cip_act, cour_act);
     Class_list = test.getAllClassAverageByCIP(cip_act); %>
+
 
 
 <h1> <%= cour_act %></h1>
@@ -59,9 +60,9 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 
   <tr>
     <th> <h3>Évaluation</h3></th>
-    <th> <h3>Note Competence</h3> </th>
-    <th> <h3>Moyenne groupe</h3> </th>
-    <th> <h3>Ponderation Competence</h3> </th>
+    <th> <h3>Note Competence (%)</h3> </th>
+    <th> <h3>Moyenne groupe (%)</h3> </th>
+    <th> <h3>Ponderation Competence (points)</h3> </th>
   </tr>
 
 

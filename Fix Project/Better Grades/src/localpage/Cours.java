@@ -34,6 +34,7 @@ public class Cours extends HttpServlet {
 		
 		
 		response.setContentType("text/html") ;
+		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("Cours.jsp") ;
 	    
 	     // inclusion de cette ressource

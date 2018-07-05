@@ -37,13 +37,13 @@ public class Home extends HttpServlet {
 		response.setContentType("text/html") ;
 		// construction d'un request dispatcher sur la page JSP, qui doit exister
 		// dans la web application courante
+		String cip = request.getUserPrincipal().toString();
+		 response.getWriter().println("Active cip: " + cip);
 	    RequestDispatcher requestDispatcher = request.getRequestDispatcher("Home.jsp") ;
 	    
-	    String cip = request.getUserPrincipal().toString();
-	    response.getWriter().println("Active cip: " + cip);
-	    
-	     // inclusion de cette ressource
-	    requestDispatcher.include(request, response) ;
+	   
+		request.setAttribute("cip",cip);
+		requestDispatcher.forward(request, response);
 	}
 
 	/**
