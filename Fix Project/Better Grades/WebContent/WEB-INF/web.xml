@@ -25,7 +25,7 @@
     </init-param>
     <init-param>
       <param-name>serverName</param-name>
-      <param-value>http://localhost:8080</param-value>
+      <param-value>http://s3iprojet05.gel.usherbrooke.ca:8080</param-value>
     </init-param>
   </filter>
   <filter-mapping>
@@ -41,7 +41,7 @@
     </init-param>
     <init-param>
       <param-name>serverName</param-name>
-      <param-value>http://localhost:8080</param-value>
+      <param-value>s3iprojet05.gel.usherbrooke.ca:8080</param-value>
     </init-param>
   </filter>
   <filter-mapping>
