@@ -1,11 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta charset="UTF-8">
 <title>Bienvenue</title>
 </head>
 <body>
@@ -16,18 +15,20 @@
 
 <% String cip=(String)request.getAttribute("cip").toString().toUpperCase(); %>
 
-<h1>Welcome to Better Grades, <%= cip %> </h1>
+<h1>Bienvenue à vos notes, <%= cip %> </h1>
 <br/>
-<h2>Here are your classes:</h2>
+<h2>Liste de vos cours:</h2>
 
 
 <table border="1" cellpadding="10">
 
 	<tr>
-        <th> <h3>Class ID</h3></th>
-        <th> <h3>Personal Average</h3> </th>
-        <th> <h3>Group Average</h3> </th>
-        <th> <h3>Expected GPA (letter)</h3> </th>
+        <th> <h3>Nom</h3></th>
+        <th> <h3>Note</h3> </th>
+        <th> <h3>Moyenne</h3> </th>
+        <th> <h3>Cote</h3> </th>
+        <th> <h3>Moyenne Cote</h3></th>
+        <th> <h3>Crédits</h3></th>
     </tr>
 
 	<%
@@ -53,12 +54,6 @@ for (int i = 0; i < class_list.size(); i++) {
 
     </table>
 
-
-
-	
-    
-    
-    
 
 
 </body>
