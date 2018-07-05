@@ -1,5 +1,5 @@
-<script> <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%> </script>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -14,11 +14,8 @@
  	<%@ page import ="MyBatisPackage.dao.CompetenceAverageDAO" %>
  	<%@ page import ="MyBatisPackage.dao.ExamAverageDAO" %>
  	<%@ page import ="MyBatisPackage.model.*" %>
- 	<%@ page import ="java.util.List" %>
+	<%@ page import ="java.util.*" %>
  	
-
-	
-
 
 
 	<% String cour_act= (String)request.getAttribute("myname").toString().toUpperCase();
@@ -60,9 +57,10 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 
   <tr>
     <th> <h3>Évaluation</h3></th>
-    <th> <h3>Note Competence (%)</h3> </th>
-    <th> <h3>Moyenne groupe (%)</h3> </th>
-    <th> <h3>Ponderation Competence (points)</h3> </th>
+    <th> <h3>Totale</h3> <p> note/ponderation</p> </th>
+    <th> <h3>Moyenne note/ponderation (%)</h3> </th>
+    <th> <h3>competences note/ponderation</h3> </th>
+    <th> <h3> moyenne competences note/ponderation</h3> </th>
   </tr>
 
 
