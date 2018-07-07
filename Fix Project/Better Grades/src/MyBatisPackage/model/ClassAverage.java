@@ -3,11 +3,21 @@ package MyBatisPackage.model;
 public class ClassAverage {
 	
 	private String idCours;
+	private int groupe_id;
+	private String trimestre_id;
 	private String cipEtudiant;
 	private float total;
 	private float moyenne;
 	private String coteIndividuelle;
 	private String coteMoyenne;
+	
+	public int getIdGroupe() {
+		return this.groupe_id;
+	}
+	
+	public String getIdTrimestre() {
+		return this.trimestre_id;
+	}
 	
 	public String getIdCours() {
 		return this.idCours;

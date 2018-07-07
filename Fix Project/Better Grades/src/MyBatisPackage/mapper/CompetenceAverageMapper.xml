@@ -7,11 +7,12 @@
 	<select id="getAllCompetenceAverageByCIP" parameterType="Map" resultType="MyBatisPackage.model.CompetenceAverage">
 		SELECT
 		cours_id as idCours,
+		groupe_id as groupe_id,
+		trimestre_id as trimestre_id,
 		cip_etudiant as cipEtudiant,
 		competence_id as idCompetence,
 		total as total,
-		moyenne as moyenne,
-		description as nomCompetence
+		moyenne as moyenne
 		FROM PUBLIC_VIEWS.COMPETENCERESULTAVG
 		WHERE CIP_ETUDIANT = #{cip_etudiant}
 		AND cours_id = #{cours_id}
@@ -20,10 +21,11 @@
 	<resultMap type="CompetenceAverage" id="CompetenceAverageResultSet">
 		<id property="cipEtudiant" column="cip_etudiant" />
 		<result property="idCours" column="cours_id" />
+		<result property="groupe_id" column="groupe_id" />
+		<result property="trimestre_id" column="trimestre_id" />
 		<result property="idCompetence" column="competence_id" />
 		<result property="total" column="total" />
 		<result property="moyenne" column="moyenne" />
-		<result property="nomCompetence" column="description" />
 		
 	</resultMap>
 

@@ -7,14 +7,15 @@
 	<select id="getAllExamAverageByCIPAndClass" parameterType="Map" resultType="MyBatisPackage.model.ExamAverage">
 		SELECT
 		cours_id as idCours,
+		groupe_id as groupe_id,
+		trimestre_id as trimestre_id,
 		cip_etudiant as cipEtudiant,
 		competence_id as idCompetence,
 		note as note,
 		moyenne as moyenne,
-		nom as nomExam,
+		titre as nomExam,
 		evaluation_id as idEvaluation,
-		ponderation as ponderation,
-		description as nomCompetence
+		ponderation as ponderation
 		FROM PUBLIC_VIEWS.EXAMRESULTAVG
 		WHERE CIP_ETUDIANT = #{cip_etudiant}
 		AND cours_id = #{cours_id}
@@ -23,12 +24,13 @@
 	<resultMap type="ExamAverage" id="ExamAverageResultSet">
 		<id property="cipEtudiant" column="cip_etudiant" />
 		<result property="idCours" column="cours_id" />
+		<result property="groupe_id" column="groupe_id" />
+		<result property="trimestre_id" column="trimestre_id" />
 		<result property="idCompetence" column="competence_id" />
 		<result property="note" column="note" />
 		<result property="moyenne" column="moyenne" />
-		<result property="nomExam" column="nom" />
+		<result property="nomExam" column="titre" />
 		<result property="idEvaluation" column="evaluation_id" />
-		<result property="nomCompetence" column="description" />
 		<result property="ponderation" column="ponderation" />
 		
 	</resultMap>
