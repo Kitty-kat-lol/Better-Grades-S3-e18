@@ -22,13 +22,13 @@ public class ClassAverageDAO {
 		}
 	}
 	
-	public ClassAverage getClassAverageByCIPAndCoursId(String cip, String coursId) {
+	public ClassAverage getClassAverageByCIPAndCoursId(String cip, String coursId, int groupe_id, String trimestre_id) {
 		
 		SqlSession sqlSession = MyBatisDAOUtil.getSqlSessionFactory()
 				.openSession();
 		try {
 			ClassAverageMapper classAverageMapper = sqlSession.getMapper(ClassAverageMapper.class);
-			return classAverageMapper.getClassAverageByCIPAndCoursId(cip, coursId);
+			return classAverageMapper.getClassAverageByCIPAndCoursId(cip, coursId, groupe_id, trimestre_id);
 		} finally {
 			sqlSession.close();
 		}

@@ -11,7 +11,6 @@ public class ExamAverage {
 	private String idCours;
 	private int groupe_id;
 	private String trimestre_id;
-	private String nomCompetence;
 	private int ponderation;
 	
 	public int getIdGroupe() {
@@ -24,10 +23,7 @@ public class ExamAverage {
 	public int getPonderation() {
 		return this.ponderation;
 	}
-	
-	public String getNomCompetence() {
-		return this.nomCompetence;
-	}
+
 	
 	public String getNomExam() {
 		return this.nomExam;
@@ -58,7 +54,7 @@ public class ExamAverage {
 	}
 	
 	public String toString() {
-		return this.cipEtudiant + ", " + this.idCours + ", Exam: " +this.nomExam + ", "+ this.nomCompetence + ", Note: " + this.note + 
+		return this.cipEtudiant + ", " + this.idCours + ", Exam: " +this.nomExam + ", Note: " + this.note + 
 				", Moyenne: " + this.moyenne + ", Pondération: " + this.ponderation + ", Session: "+this.trimestre_id + "\n";
 	}
 	

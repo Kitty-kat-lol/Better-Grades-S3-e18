@@ -4,16 +4,24 @@
 
 <mapper namespace="MyBatisPackage.mapper.SessionAverageMapper">
 
-	<select id="getSessionByCIP" parameterType="String" resultType="MyBatisPackage.model.SessionAverage">
+	<select id="getAllSessionByCIP" parameterType="String" resultType="MyBatisPackage.model.SessionAverage">
 		SELECT cip_etudiant as cipEtudiant,
-		cotesession as coteSession
-		FROM PUBLIC_VIEWS.SESSION
+		trimestre_id as trimestre_id,
+		total as total,
+		moyenne as moyenne,
+		coteindividuelle as coteindividuelle,
+		cotemoyenne as cotemoyenne
+		FROM PUBLIC_VIEWS.SESSIONRESULTAVG
 		WHERE CIP_ETUDIANT = #{cipEtudiant}
 	</select>
 
 	<resultMap type="SessionAverage" id="SessionAverageResultSet">
 		<id property="cipEtudiant" column="cip_etudiant" />
-		<result property="coteSession" column="cotesession" />
+		<result property="total" column="total" />
+		<result property="moyenne" column="moyenne" />
+		<result property="trimestre_id" column="trimestre_id" />
+		<result property="coteindividuelle" column="coteindividuelle" />
+		<result property="cotemoyenne" column="cotemoyenne" />
 		
 	</resultMap>
 
