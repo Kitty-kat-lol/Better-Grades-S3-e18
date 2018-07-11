@@ -6,7 +6,7 @@ import MyBatisPackage.model.SessionAverage;
 
 public interface SessionAverageMapper {
 	
-	public List<SessionAverage> getSessionByCIP(String cip);
+	public List<SessionAverage> getAllSessionByCIP(String cip);
 	
 
 }

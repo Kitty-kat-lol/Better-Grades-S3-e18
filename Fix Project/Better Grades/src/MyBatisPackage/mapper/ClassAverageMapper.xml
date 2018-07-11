@@ -17,6 +17,8 @@
 		FROM PUBLIC_VIEWS.COMPARISONRESULTAVG
 		WHERE CIP_ETUDIANT = #{cip}
 		AND cours_id = #{coursId}
+		AND groupe_id = #{groupe_id}
+		AND trimestre_id = #{trimestre_id}
 	</select>
 	
 	<select id="getAllClassAverageByCIP" parameterType="map" resultType="MyBatisPackage.model.ClassAverage">

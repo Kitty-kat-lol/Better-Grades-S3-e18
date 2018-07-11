@@ -16,6 +16,8 @@
 		FROM PUBLIC_VIEWS.COMPETENCERESULTAVG
 		WHERE CIP_ETUDIANT = #{cip_etudiant}
 		AND cours_id = #{cours_id}
+		AND groupe_id = #{groupe_id}
+		AND trimestre_id = #{trimestre_id}
 	</select>
 
 	<resultMap type="CompetenceAverage" id="CompetenceAverageResultSet">
