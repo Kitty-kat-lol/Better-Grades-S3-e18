@@ -2,31 +2,32 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <link rel="stylesheet" type="text/css" href="css/home.css">
+
 <head>
 <meta charset="UTF-8">
 <title>Bienvenue</title>
 </head>
 <body>
 
-<div class="background">
-
-</div>
-
-<div class="content">
+<nav class = "background">
+<nav class = "content">
 	<%@ page import ="MyBatisPackage.dao.ClassAverageDAO" %>
 	<%@ page import ="java.util.*" %>
 	<%@ page import ="MyBatisPackage.model.ClassAverage" %>
 	
 	<% String cip=(String)request.getAttribute("cip").toString().toUpperCase(); %>
 	
-	<img src="images/usherbrooke.png" />
+	<img src="images/logoudes.png" />
 	
-	<h1>Bienvenue à vos notes, <%= cip %> </h1>
-	<br/>
-	<h2>Liste de vos cours:</h2>
+	<nav class = "content_header">
+	<h1>Bienvenue, <%= cip %> </h1>
 	
+	<h1>Liste de vos cours:</h1>
+	</nav>
 	
+	<nav class = "tableau">
 	<table border="1" cellpadding="10">
 	
 		<tr>
@@ -59,9 +60,11 @@
 	<% } %>   
 	
 	
-	    </table>
-
-</div>
+	</table>
+	</nav>
+	
+</nav>
+</nav>
 
 </body>
 </html>
