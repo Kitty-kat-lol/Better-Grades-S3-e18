@@ -10,13 +10,13 @@ import MyBatisPackage.util.MyBatisDAOUtil;
 
 public class ClassAverageDAO {
 	
-	public List<ClassAverage> getAllClassAverageByCIP(String cip) {
+	public List<ClassAverage> getAllClassAverageByCIP(String cip, String trimestre_id) {
 		cip.toUpperCase();
 		SqlSession sqlSession = MyBatisDAOUtil.getSqlSessionFactory()
 				.openSession();
 		try {
 			ClassAverageMapper classAverageMapper = sqlSession.getMapper(ClassAverageMapper.class);
-			return classAverageMapper.getAllClassAverageByCIP(cip);
+			return classAverageMapper.getAllClassAverageByCIP(cip, trimestre_id);
 		} finally {
 			sqlSession.close();
 		}

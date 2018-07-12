@@ -10,6 +10,11 @@ public class ClassAverage {
 	private float moyenne;
 	private String coteIndividuelle;
 	private String coteMoyenne;
+	private int credit;
+	
+	public int getCredit() {
+		return this.credit;
+	}
 	
 	public int getIdGroupe() {
 		return this.groupe_id;
@@ -44,9 +49,9 @@ public class ClassAverage {
 	}
 	
 	public String toString() {
-		return this.cipEtudiant + ", " + this.idCours + ", Total: " + this.total + 
+		return this.cipEtudiant + ", " + this.idCours + ", Groupe: " + this.groupe_id + ", Trimestre: " + this.trimestre_id +", Total: " + this.total + 
 				", Moyenne: " + this.moyenne + ", Cote Individuelle: " + this.coteIndividuelle + ", Cote du groupe: "
-				+ this.coteMoyenne + "\n";
+				+ this.coteMoyenne + ", Crédit(s): "+ this.credit + "\n";
 	}
 	
 	

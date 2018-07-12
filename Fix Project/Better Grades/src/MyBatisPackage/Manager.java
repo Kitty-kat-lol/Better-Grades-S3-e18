@@ -34,6 +34,10 @@ public class Manager {
 		System.out.println(someAverage.toString());
 		someAverage = test.getClassAverageByCIPAndCoursId("CONT3301", "GEN220", 25, "H18");
 		System.out.println(someAverage.toString());
+		
+		List<ClassAverage> someClasses;
+		someClasses = test.getAllClassAverageByCIP("CONT3301", "E18");
+		System.out.println(someClasses.toString());
 
 		
 		List<CompetenceAverage> someCompetences;

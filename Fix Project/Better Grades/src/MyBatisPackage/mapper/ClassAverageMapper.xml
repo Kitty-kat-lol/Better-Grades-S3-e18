@@ -13,12 +13,13 @@
 		total as total,
 		moyenne as moyenne,
 		coteindividuelle as coteIndividuelle,
+		credit as credit,
 		cotemoyenne as coteMoyenne
 		FROM PUBLIC_VIEWS.COMPARISONRESULTAVG
 		WHERE CIP_ETUDIANT = #{cip}
-		AND cours_id = #{coursId}
-		AND groupe_id = #{groupe_id}
-		AND trimestre_id = #{trimestre_id}
+		AND COURS_ID = #{coursId}
+		AND GROUPE_ID = #{groupe_id}
+		AND TRIMESTRE_ID = #{trimestre_id}
 	</select>
 	
 	<select id="getAllClassAverageByCIP" parameterType="map" resultType="MyBatisPackage.model.ClassAverage">
@@ -30,9 +31,11 @@
 		total as total,
 		moyenne as moyenne,
 		coteindividuelle as coteIndividuelle,
+		credit as credit,
 		cotemoyenne as coteMoyenne
 		FROM PUBLIC_VIEWS.COMPARISONRESULTAVG
 		WHERE CIP_ETUDIANT = #{cip}
+		AND TRIMESTRE_ID = #{trimestre_id}
 	</select>
 
 	<resultMap type="ClassAverage" id="ClassAverageResultSet">
@@ -43,6 +46,7 @@
 		<result property="total" column="total" />
 		<result property="moyenne" column="moyenne" />
 		<result property="coteIndividuelle" column="coteindividuelle" />
+		<result property="credit" column="credit" />
 		<result property="coteMoyenne" column="cotemoyenne" />
 		
 	</resultMap>
