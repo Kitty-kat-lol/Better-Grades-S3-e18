@@ -84,9 +84,9 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
       %> 
   <tr>
     <td> <%=evals.get(i).getNomExam() %></td>
-    <td> <%=copmt.get(i).getNomExam() %></td>
-    <td> <%=evals.get(i).getNomExam() %></td>
-    <td> <%=evals.get(i).getNomExam() %></td>
+    <td> <%=evals.get(i).getC1() %></td>
+    <td> <%=evals.get(i).getC2() %></td>
+    <td> <%=evals.get(i).getC3() %></td>
     <td><%= evals.get(i).getNote() %>  </td>
     <td> <%=evals.get(i).getMoyenne() %>  </td>
     <td> <%=evals.get(i).getPonderation() %>  </td>
