@@ -27,7 +27,10 @@
 	<%@ page import ="MyBatisPackage.model.SessionAverage" %>
 
 
-	<% String cip=(String)request.getAttribute("cip").toString().toUpperCase(); %>
+	<% String cip=(String)request.getAttribute("cip").toString().toUpperCase();
+		List<SessionAverage> someSessions;
+		SessionAverageDAO sessionTest = new SessionAverageDAO();
+		someSessions = sessionTest.getAllSessionByCIP(cip);%>
 	
 	<img src="images/logoudes.png" />
 	
@@ -38,7 +41,7 @@
 	</nav>
 	<h1>Choisissez Session<h1>
 	<ul> 
-	<% for (int i = 0; i < 3; i++) {%>
+	<% for (int i = 0; i < someSessions.size(); i++) {%>
 		<li><a href="#">session<%System.out.print(i);%></a></li>
 	<%}%>
 	</ul>

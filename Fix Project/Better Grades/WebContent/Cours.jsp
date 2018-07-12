@@ -79,14 +79,14 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
     <th> <h3>Pondération</h3></th>
   </tr>
 
-    <%for (int i = 0; i < evals.size(); i++) {
+    <%for (int i = 0; i < evals.size(); i = i + compt.size()) {
       %> 
   <tr>
     <td> <%=evals.get(i).getNomExam() %></td>
     <% for (int j = 0; j < compt.size(); j++) {%> 
-    <th>temp</th>
+    <th><%=evals.get(j+i).getNote() %></th>
     <% } %>
-    <td>temp</td>
+    <td><%=evals.get(i).getTotalExam() %></td>
     <td> <%=evals.get(i).getMoyenne() %>  </td>
     <td> <%=evals.get(i).getPonderation() %>  </td>
   </tr>
