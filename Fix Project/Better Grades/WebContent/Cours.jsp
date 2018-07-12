@@ -66,29 +66,28 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 
 <table border="1" cellpadding="10">
 
+  	<% List<ExamAverage> evals;
+	  ExamAverageDAO testExams = new ExamAverageDAO();
+      evals = testExams.getAllExamAverageByCIPAndClass(cip_act, cour_act, groupe_act, trim_act);
+      List<CompetenceAverage> compt;
+      CompetenceAverageDAO someTest = new CompetenceAverageDAO();
+      compt = someTest.getAllCompetenceAverageByCIP(cip_act, cour_act, groupe_act, trim_act);%>
+      
   <tr>
     <th> <h3>Évaluation</h3></th>
-    <% for (int i = 0; i < 3; i++) {%> 
-    <th> <h3>"C"<%System.out.print(i); %></h3></th>
+    <% for (int i = 0; i < compt.size(); i++) {%> 
+    <th> <h3>C<%System.out.print(i); %></h3></th>
     <% } %>
     <th> <h3>Note</h3> <p></th>
     <th> <h3>Moyenne du groupe</h3> <p></th>
     <th> <h3>Pondération</h3></th>
   </tr>
 
-
-  	<% List<ExamAverage> evals;
-	  ExamAverageDAO testExams = new ExamAverageDAO();
-      evals = testExams.getAllExamAverageByCIPAndClass(cip_act, cour_act, groupe_act, trim_act);
-      List<CompetenceAverage> compt;
-      CompetenceAverageDAO someTest = new CompetenceAverageDAO();
-      compt = someTest.getAllCompetenceAverageByCIP(cip_act, cour_act, groupe_act, trim_act);
-      
-    for (int i = 0; i < evals.size(); i++) {
+    <%for (int i = 0; i < evals.size(); i++) {
       %> 
   <tr>
     <td> <%=evals.get(i).getNomExam() %></td>
-    <% for (int j = 0; j < 3; j++) {%> 
+    <% for (int j = 0; j < compt.size(); j++) {%> 
     <th>temp</th>
     <% } %>
     <td>temp</td>
