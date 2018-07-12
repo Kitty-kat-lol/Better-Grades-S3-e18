@@ -40,6 +40,16 @@
 	<h1>Liste de vos cours:</h1>
 	</nav>
 	<h1>Choisissez Session<h1>
+	
+
+    <FORM>
+    <SELECT name="nom" size="1">
+    <% for (int i = 0; i < someSessions.size(); i++) {%>
+		<option><%= someSessions.get(i).getTrimestre()%>
+	<%}%>
+    </SELECT>
+    </FORM>
+	
 	<ul> 
 	<% for (int i = 0; i < someSessions.size(); i++) {%>
 		<li><a href="#">session<%System.out.print(i);%></a></li>

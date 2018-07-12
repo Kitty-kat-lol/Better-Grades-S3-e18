@@ -79,18 +79,26 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
     <th> <h3>Pondération</h3></th>
   </tr>
 
-    <%for (int i = 0; i < evals.size(); i = i + compt.size()) {
+    <%String temp_str ="";
+    for (int i = 0; i < evals.size(); i++) {
+    	if (evals.get(i).getNomExam() != temp_str){
+    		temp_str = evals.get(i).getNomExam();
       %> 
   <tr>
     <td> <%=evals.get(i).getNomExam() %></td>
-    <% for (int j = 0; j < compt.size(); j++) {%> 
-    <th><%=evals.get(j+i).getNote() %></th>
-    <% } %>
+    <% for (int j = 0; j < compt.size(); j++) {
+    		int a = (i+j-1);
+    	if (evals.get(a).getCompetence() == (j+1)){%>
+    	<th><%=evals.get(a).getNote() %></th> 
+    		
+    <% }
+    	else %>
+    	<th>-<th> <% } %>
     <td><%=evals.get(i).getTotalExam() %></td>
     <td> <%=evals.get(i).getMoyenne() %>  </td>
     <td> <%=evals.get(i).getPonderation() %>  </td>
   </tr>
-   <% } %> 
+   <% }} %> 
 
 </table>
 
