@@ -25,7 +25,10 @@
     </init-param>
     <init-param>
       <param-name>serverName</param-name>
-      <param-value>http://localhost:8080</param-value>
+<<<<<<< HEAD
+      <param-value>http://s3iprojet05.gel.usherbrooke.ca:8080</param-value>
+=======
+>>>>>>> 7efc6aae73a878a64761bd67e29b63af998743ec
     </init-param>
   </filter>
   <filter-mapping>
@@ -41,7 +44,10 @@
     </init-param>
     <init-param>
       <param-name>serverName</param-name>
-      <param-value>http://localhost:8080</param-value>
+<<<<<<< HEAD
+      <param-value>s3iprojet05.gel.usherbrooke.ca:8080</param-value>
+=======
+>>>>>>> 7efc6aae73a878a64761bd67e29b63af998743ec
     </init-param>
   </filter>
   <filter-mapping>
@@ -56,4 +62,8 @@
     <filter-name>CAS HttpServletRequest Wrapper Filter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+<<<<<<< HEAD
+  </web-app>
+=======
 </web-app>
+>>>>>>> 7efc6aae73a878a64761bd67e29b63af998743ec
