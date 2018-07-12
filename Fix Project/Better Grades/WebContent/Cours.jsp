@@ -41,11 +41,12 @@
 
 <img src="images/logoudes.png" />
 
+<nav class = 'content_header' >
 <h1> <%= cour_act %></h1>
 
 
-<p><%= cip_act %> </p>
-
+<h1><%= cip_act %> </h1>
+</nav>
 <p id="NOW"></p>
 <script>
 document.getElementById("NOW").innerHTML ="Note globale du cours : = " + Class_act.getCoteIndividuelle();
