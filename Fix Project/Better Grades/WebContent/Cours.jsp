@@ -2,9 +2,9 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<!--
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
--->
+
+
+<link rel="stylesheet" type="text/css" href="css/home.css">
 <head>
 <meta charset="UTF-8">
   <title>Bienvenue</title>
