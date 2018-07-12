@@ -9,16 +9,21 @@ public class ExamAverage {
 	private float moyenne;
 	private int idEvaluation;
 	private String idCours;
-	private String nomCompetence;
+	private int groupe_id;
+	private String trimestre_id;
 	private int ponderation;
 	
+	public int getIdGroupe() {
+		return this.groupe_id;
+	}
+	
+	public String getIdTrimestre() {
+		return this.trimestre_id;
+	}
 	public int getPonderation() {
 		return this.ponderation;
 	}
-	
-	public String getNomCompetence() {
-		return this.nomCompetence;
-	}
+
 	
 	public String getNomExam() {
 		return this.nomExam;
@@ -49,8 +54,8 @@ public class ExamAverage {
 	}
 	
 	public String toString() {
-		return this.cipEtudiant + ", " + this.idCours + ", Exam: " +this.nomExam + ", "+ this.nomCompetence + ", Note: " + this.note + 
-				", Moyenne: " + this.moyenne + ", Pondération: " + this.ponderation+ "\n";
+		return this.cipEtudiant + ", " + this.idCours + ", Exam: " +this.nomExam + ", Note: " + this.note + 
+				", Moyenne: " + this.moyenne + ", Pondération: " + this.ponderation + ", Session: "+this.trimestre_id + "\n";
 	}
 	
 	

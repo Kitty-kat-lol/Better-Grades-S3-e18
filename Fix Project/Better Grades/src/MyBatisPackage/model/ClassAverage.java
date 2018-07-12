@@ -3,11 +3,26 @@ package MyBatisPackage.model;
 public class ClassAverage {
 	
 	private String idCours;
+	private int groupe_id;
+	private String trimestre_id;
 	private String cipEtudiant;
 	private float total;
 	private float moyenne;
 	private String coteIndividuelle;
 	private String coteMoyenne;
+	private int credit;
+	
+	public int getCredit() {
+		return this.credit;
+	}
+	
+	public int getIdGroupe() {
+		return this.groupe_id;
+	}
+	
+	public String getIdTrimestre() {
+		return this.trimestre_id;
+	}
 	
 	public String getIdCours() {
 		return this.idCours;
@@ -34,9 +49,9 @@ public class ClassAverage {
 	}
 	
 	public String toString() {
-		return this.cipEtudiant + ", " + this.idCours + ", Total: " + this.total + 
+		return this.cipEtudiant + ", " + this.idCours + ", Groupe: " + this.groupe_id + ", Trimestre: " + this.trimestre_id +", Total: " + this.total + 
 				", Moyenne: " + this.moyenne + ", Cote Individuelle: " + this.coteIndividuelle + ", Cote du groupe: "
-				+ this.coteMoyenne + "\n";
+				+ this.coteMoyenne + ", Crédit(s): "+ this.credit + "\n";
 	}
 	
 	

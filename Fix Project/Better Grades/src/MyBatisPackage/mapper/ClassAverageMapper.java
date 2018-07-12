@@ -8,8 +8,9 @@ import MyBatisPackage.model.ClassAverage;
 
 public interface ClassAverageMapper {
 	
-	public List<ClassAverage> getAllClassAverageByCIP(String cip);
+	public List<ClassAverage> getAllClassAverageByCIP(@Param("cip") String cip, @Param("trimestre_id") String trimestre_id);
 	
-	public ClassAverage getClassAverageByCIPAndCoursId(@Param("cip") String cip_etudiant, @Param("coursId") String cours_id);
+	public ClassAverage getClassAverageByCIPAndCoursId(@Param("cip") String cip_etudiant, 
+			@Param("coursId") String cours_id, @Param("groupe_id") int groupe_id, @Param("trimestre_id") String trimestre_id);
 
 }

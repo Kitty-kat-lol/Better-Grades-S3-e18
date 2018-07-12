@@ -1,34 +1,40 @@
-<script> <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%> </script>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=ISO-	8859-1">
+<!--
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+-->
+<head>
+<meta charset="UTF-8">
   <title>Bienvenue</title>
   </head>
 <body>
-	
 	<%@ page import ="MyBatisPackage.dao.ClassAverageDAO" %>
- 	<%@ page import ="MyBatisPackage.dao.CompetenceAverageDAO" %>
- 	<%@ page import ="MyBatisPackage.dao.ExamAverageDAO" %>
- 	<%@ page import ="MyBatisPackage.model.*" %>
- 	<%@ page import ="java.util.List" %>
+	<%@ page import ="java.util.*" %>
+	<%@ page import ="MyBatisPackage.model.ClassAverage" %>
+	<%@ page import ="MyBatisPackage.dao.CompetenceAverageDAO" %>
+	<%@ page import ="MyBatisPackage.dao.CoursDAO" %>
+	<%@ page import ="MyBatisPackage.dao.ExamAverageDAO" %>
+	<%@ page import ="MyBatisPackage.dao.SessionAverageDAO" %>
+	<%@ page import ="MyBatisPackage.model.ClassAverage" %>
+	<%@ page import ="MyBatisPackage.model.CompetenceAverage" %>
+	<%@ page import ="MyBatisPackage.model.Cours" %>
+	<%@ page import ="MyBatisPackage.model.ExamAverage" %>
+	<%@ page import ="MyBatisPackage.model.SessionAverage" %>
+
  	
-
-	
-
 
 
 	<% String cour_act= (String)request.getAttribute("myname").toString().toUpperCase();
-    String cip_act = (String)request.getAttribute("cip").toString().toUpperCase(); 
+    String cip_act = (String)request.getAttribute("cip").toString().toUpperCase();
+    int groupe_act = 1;
+    String trim_act = "H18";
 
     ClassAverage Class_act;
-    List<ClassAverage> Class_list;
-	ClassAverageDAO test = new ClassAverageDAO();
-	Class_act = test.getClassAverageByCIPAndCoursId(cip_act, cour_act);
-    Class_list = test.getAllClassAverageByCIP(cip_act); %>
+	ClassAverageDAO class_total = new ClassAverageDAO();
+	Class_act = class_total.getClassAverageByCIPAndCoursId(cip_act, cour_act, groupe_act, trim_act);
+     %>
 
 
 
@@ -39,14 +45,12 @@
 
 <p id="NOW"></p>
 <script>
-document.getElementById("NOW").innerHTML ="Note globale du cours : "+
-"temp" + " = " + "C";
+document.getElementById("NOW").innerHTML ="Note globale du cours : = " + Class_act.getCoteIndividuelle();
 </script>
 
 <p id="MOYG"></p>
 <script>
-document.getElementById("MOYG").innerHTML ="Moyenne du groupe dans ce cours : "+
-"temp" + " = " + "C";
+document.getElementById("MOYG").innerHTML ="Moyenne du groupe dans ce cours : = " + Class_act.getCoteGroupe();
 </script>
 
 <!--
@@ -60,20 +64,30 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 
   <tr>
     <th> <h3>Évaluation</h3></th>
-    <th> <h3>Note Competence (%)</h3> </th>
-    <th> <h3>Moyenne groupe (%)</h3> </th>
-    <th> <h3>Ponderation Competence (points)</h3> </th>
+    <% for (int i = 0; i < 3; i++) {%> 
+    <th> <h3>"C"<%System.out.print(i); %></h3></th>
+    <% } %>
+    <th> <h3>Note</h3> <p></th>
+    <th> <h3>Moyenne du groupe</h3> <p></th>
+    <th> <h3>Pondération</h3></th>
   </tr>
 
 
   	<% List<ExamAverage> evals;
 	  ExamAverageDAO testExams = new ExamAverageDAO();
-      evals = testExams.getAllExamAverageByCIPAndClass(cip_act, cour_act);
+      evals = testExams.getAllExamAverageByCIPAndClass(cip_act, cour_act, groupe_act, trim_act);
+      List<CompetenceAverage> compt;
+      CompetenceAverageDAO someTest = new CompetenceAverageDAO();
+      compt = someTest.getAllCompetenceAverageByCIP(cip_act, cour_act, groupe_act, trim_act);
+      
     for (int i = 0; i < evals.size(); i++) {
       %> 
   <tr>
     <td> <%=evals.get(i).getNomExam() %></td>
-    <td><%= evals.get(i).getNote() %>  </td>
+    <% for (int j = 0; j < 3; j++) {%> 
+    <th>temp</th>
+    <% } %>
+    <td>temp</td>
     <td> <%=evals.get(i).getMoyenne() %>  </td>
     <td> <%=evals.get(i).getPonderation() %>  </td>
   </tr>
@@ -93,13 +107,13 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 
 <script>
 function precedant() {
-    <!-- lien cours précédent -->
+    
     }
 </script>
 
 <script>
 function suivant() {
-    <!-- lien cours suivant -->
+   
 	}
 </script>
 

@@ -10,13 +10,13 @@ import MyBatisPackage.util.MyBatisDAOUtil;
 
 public class SessionAverageDAO {
 	
-	public List<SessionAverage> getSessionByCIP(String cip) {
+	public List<SessionAverage> getAllSessionByCIP(String cip) {
 		cip.toUpperCase();
 		SqlSession sqlSession = MyBatisDAOUtil.getSqlSessionFactory()
 				.openSession();
 		try {
 			SessionAverageMapper sessionAverageMapper = sqlSession.getMapper(SessionAverageMapper.class);
-			return sessionAverageMapper.getSessionByCIP(cip);
+			return sessionAverageMapper.getAllSessionByCIP(cip);
 		} finally {
 			sqlSession.close();
 		}

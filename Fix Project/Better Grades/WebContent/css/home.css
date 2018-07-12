@@ -1,0 +1,30 @@
+.background{
+	background-image: url("../images/imgback.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position-x: center;
+	background-height: 100%;
+	background-width: 100%;
+	z-index: -1;
+	
+	}
+
+.content{
+	background-color: rgba(255, 255, 255, 0.75);
+}
+
+.content_header{
+	font-size: 150%;
+	padding-left: 26%;
+}
+
+table{
+	margin: auto;
+	text-align: center;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border: solid;
+	border-collapse: collapse;
+	background-color: rgba(50, 180, 50, 0.8);
+}

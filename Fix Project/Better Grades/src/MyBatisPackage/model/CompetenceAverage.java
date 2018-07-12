@@ -3,15 +3,21 @@ package MyBatisPackage.model;
 public class CompetenceAverage {
 	
 	private String idCours;
+	private int groupe_id;
+	private String trimestre_id;
 	private String cipEtudiant;
 	private int idCompetence;
 	private float total;
 	private float moyenne;
-	private String nomCompetence;
 	
-	public String getNomCompetence() {
-		return this.nomCompetence;
+	public int getIdGroupe() {
+		return this.groupe_id;
 	}
+	
+	public String getIdTrimestre() {
+		return this.trimestre_id;
+	}
+	
 	
 	public String getIdCours() {
 		return this.idCours;
@@ -34,7 +40,7 @@ public class CompetenceAverage {
 	}
 	
 	public String toString() {
-		return this.cipEtudiant + ", " + this.idCours + ", " + this.nomCompetence + ", Total: " + this.total + 
+		return this.cipEtudiant + ", " + this.idCours + ", Total: " + this.total + 
 				", Moyenne: " + this.moyenne+ "\n";
 	}
 	
