@@ -28,8 +28,8 @@
 
 	<% String cour_act= (String)request.getAttribute("myname").toString().toUpperCase();
     String cip_act = (String)request.getAttribute("cip").toString().toUpperCase();
-    int groupe_act = (int)request.getAttribute("groupe");
-    String trim_act = (String)request.getAttribute("trimestre").toString().toUpperCase();
+    int groupe_act = 1;
+    String trim_act = "H18";
 
     ClassAverage Class_act;
 	ClassAverageDAO class_total = new ClassAverageDAO();
@@ -64,11 +64,11 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 
   <tr>
     <th> <h3>Évaluation</h3></th>
-    <% for (int i = 0; i < evals.size(); i++) {%> 
+    <% for (int i = 0; i < 3; i++) {%> 
     <th> <h3>"C"<%System.out.print(i); %></h3></th>
     <% } %>
     <th> <h3>Note</h3> <p></th>
-    <th> <h3>Moyenne</h3> <p></th>
+    <th> <h3>Moyenne du groupe</h3> <p></th>
     <th> <h3>Pondération</h3></th>
   </tr>
 
@@ -84,10 +84,10 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
       %> 
   <tr>
     <td> <%=evals.get(i).getNomExam() %></td>
-    <% for (int j = 0; j < evals.size(); j++) {%> 
-    <th> <h3><% evals.get(i).getCompetence(i);%></h3></th>
+    <% for (int j = 0; j < 3; j++) {%> 
+    <th>temp</th>
     <% } %>
-    <td><%= evals.get(i).getTotal() %>  </td>
+    <td>temp</td>
     <td> <%=evals.get(i).getMoyenne() %>  </td>
     <td> <%=evals.get(i).getPonderation() %>  </td>
   </tr>

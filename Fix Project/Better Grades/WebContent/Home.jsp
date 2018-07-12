@@ -50,12 +50,14 @@
 	    </tr>
 	
 		<%
-	    String trim_act = "h18";
+	    String trim_act = "H18";
+		String cip_act=(String)request.getAttribute("cip").toString().toUpperCase();
 
 		List<ClassAverage> class_list;
 		ClassAverageDAO temp = new ClassAverageDAO();
-		class_list = temp.getAllClassAverageByCIP(cip, trim_act);
-	for (int i = 0; i < class_list.size(); i++) {
+		class_list = temp.getAllClassAverageByCIP(cip_act, trim_act);%>
+		
+	<% for (int i = 0; i < class_list.size(); i++) {
 		%>
 		<tr>
 	
