@@ -15,13 +15,33 @@
 		moyenne as moyenne,
 		titre as nomExam,
 		evaluation_id as idEvaluation,
-		ponderation as ponderation
+		ponderation as ponderation,
+		totalexam as totalexam,
+		ponderationtotalexam as ponderationtotalexam
 		FROM PUBLIC_VIEWS.EXAMRESULTAVG
 		WHERE CIP_ETUDIANT = #{cip_etudiant}
 		AND cours_id = #{cours_id}
 		AND groupe_id = #{groupe_id}
 		AND trimestre_id = #{trimestre_id}
 	</select>
+	
+		<select id="getAllExam" parameterType="Map" resultType="MyBatisPackage.model.ExamAverage">	
+	Select 
+	DISTINCT
+	evaluation_id,
+	cip_etudiant as cipEtudiant,
+ cours_id as idCours,
+  groupe_id as groupe_id,
+  trimestre_id as trimestre_id,
+  titre as nomExam,
+  totalexam as totalexam,
+  ponderationtotalexam as ponderationtotalexam
+from public_views.examresultavg
+WHERE CIP_ETUDIANT = #{cip_etudiant}
+		AND cours_id = #{cours_id}
+		AND groupe_id = #{groupe_id}
+		AND trimestre_id = #{trimestre_id};
+		</select>
 
 	<resultMap type="ExamAverage" id="ExamAverageResultSet">
 		<id property="cipEtudiant" column="cip_etudiant" />
@@ -34,6 +54,8 @@
 		<result property="nomExam" column="titre" />
 		<result property="idEvaluation" column="evaluation_id" />
 		<result property="ponderation" column="ponderation" />
+		<result property="ponderationtotalexam" column="ponderationtotalexam" />
+		<result property="totalexam" column="totalexam" />
 		
 	</resultMap>
 

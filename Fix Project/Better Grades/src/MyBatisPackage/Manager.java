@@ -49,7 +49,9 @@ public class Manager {
 		List<ExamAverage> someExams;
 		ExamAverageDAO testExams = new ExamAverageDAO();
 		
-		someExams = testExams.getAllExamAverageByCIPAndClass("CONT3301", "GEI769", 1, "H18");
+		someExams = testExams.getAllExamAverageByCIPAndClass("CONT3301", "GEN441", 1, "H18");
+		System.out.println(someExams.toString());
+		someExams = testExams.getAllExam("CONT3301", "GEN441", 1, "H18");
 		System.out.println(someExams.toString());
 		
 		List<SessionAverage> someSessions;
