@@ -2,14 +2,17 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<!--
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
--->
+
+<link rel="stylesheet" type="text/css" href="css/home.css">
+
 <head>
 <meta charset="UTF-8">
   <title>Bienvenue</title>
   </head>
+  
 <body>
+<nav class = "background">
+<nav class = "content">
 	<%@ page import ="MyBatisPackage.dao.ClassAverageDAO" %>
 	<%@ page import ="java.util.*" %>
 	<%@ page import ="MyBatisPackage.model.ClassAverage" %>
@@ -36,7 +39,7 @@
 	Class_act = class_total.getClassAverageByCIPAndCoursId(cip_act, cour_act, groupe_act, trim_act);
      %>
 
-
+<img src="images/logoudes.png" />
 
 <h1> <%= cour_act %></h1>
 
