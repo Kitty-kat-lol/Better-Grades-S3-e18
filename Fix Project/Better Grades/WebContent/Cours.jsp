@@ -87,7 +87,7 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
     <td> <%=evals.get(i).getC1() %></td>
     <td> <%=evals.get(i).getC2() %></td>
     <td> <%=evals.get(i).getC3() %></td>
-    <td><%= evals.get(i).getNote() %>  </td>
+    <td><%= evals.get(i).getTotal() %>  </td>
     <td> <%=evals.get(i).getMoyenne() %>  </td>
     <td> <%=evals.get(i).getPonderation() %>  </td>
   </tr>
