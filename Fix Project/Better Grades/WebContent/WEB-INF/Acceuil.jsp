@@ -9,9 +9,9 @@
 </head>
 <body>
 
-<h1>TEST BIENVENUE</h1>
+<h1>BIENVENUE</h1>
 
-<button type="button" onclick="Lancer()">Cours précédent!</button> 
+<button type="button" onclick="Lancer()">Connection</button> 
 
 <script>
 function Lancer() {

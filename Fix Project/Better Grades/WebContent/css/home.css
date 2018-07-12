@@ -15,7 +15,7 @@
 
 .content_header{
 	font-size: 150%;
-	padding-left: 26%;
+	padding-left: 15%;
 }
 
 table{
@@ -27,4 +27,7 @@ table{
 	border: solid;
 	border-collapse: collapse;
 	background-color: rgba(50, 180, 50, 0.8);
+}
+img {
+	padding-left: 5%;
 }

@@ -2,9 +2,9 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<!--
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
--->
+
+
+<link rel="stylesheet" type="text/css" href="css/home.css">
 <head>
 <meta charset="UTF-8">
   <title>Bienvenue</title>
@@ -28,12 +28,12 @@
 
 	<% String cour_act= (String)request.getAttribute("myname").toString().toUpperCase();
     String cip_act = (String)request.getAttribute("cip").toString().toUpperCase();
-    int groupe_act = (int)request.getAttribute("groupe").toint();
-    String trim_act = (String)request.getAttribute("trimestre").toString().toUpperCase();
+    int groupe_act = 1;
+    String trim_act = "H18";
 
     ClassAverage Class_act;
 	ClassAverageDAO class_total = new ClassAverageDAO();
-	Class_act = test.getClassAverageByCIPAndCoursId(cip_act, cour_act, groupe_act, trim_act);
+	Class_act = class_total.getClassAverageByCIPAndCoursId(cip_act, cour_act, groupe_act, trim_act);
      %>
 
 
@@ -64,11 +64,11 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 
   <tr>
     <th> <h3>Évaluation</h3></th>
-    <th> <h3>C1</h3></th>
-    <th> <h3>C2</h3></th>
-    <th> <h3>C3</h3></th>
+    <% for (int i = 0; i < 3; i++) {%> 
+    <th> <h3>"C"<%System.out.print(i); %></h3></th>
+    <% } %>
     <th> <h3>Note</h3> <p></th>
-    <th> <h3>Moyenne</h3> <p></th>
+    <th> <h3>Moyenne du groupe</h3> <p></th>
     <th> <h3>Pondération</h3></th>
   </tr>
 
@@ -84,10 +84,10 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
       %> 
   <tr>
     <td> <%=evals.get(i).getNomExam() %></td>
-    <td> <%=evals.get(i).getC1() %></td>
-    <td> <%=evals.get(i).getC2() %></td>
-    <td> <%=evals.get(i).getC3() %></td>
-    <td><%= evals.get(i).getNote() %>  </td>
+    <% for (int j = 0; j < 3; j++) {%> 
+    <th>temp</th>
+    <% } %>
+    <td>temp</td>
     <td> <%=evals.get(i).getMoyenne() %>  </td>
     <td> <%=evals.get(i).getPonderation() %>  </td>
   </tr>
