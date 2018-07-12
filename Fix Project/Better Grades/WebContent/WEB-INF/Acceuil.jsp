@@ -15,7 +15,7 @@
 
 <script>
 function Lancer() {
-    <!-- lien vers home.jsp -->
+   
     }
 </script>
 

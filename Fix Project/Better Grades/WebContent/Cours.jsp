@@ -2,29 +2,39 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<!--
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
+-->
 <head>
 <meta charset="UTF-8">
   <title>Bienvenue</title>
   </head>
 <body>
-	
 	<%@ page import ="MyBatisPackage.dao.ClassAverageDAO" %>
- 	<%@ page import ="MyBatisPackage.dao.CompetenceAverageDAO" %>
- 	<%@ page import ="MyBatisPackage.dao.ExamAverageDAO" %>
- 	<%@ page import ="MyBatisPackage.model.*" %>
 	<%@ page import ="java.util.*" %>
+	<%@ page import ="MyBatisPackage.model.ClassAverage" %>
+	<%@ page import ="MyBatisPackage.dao.CompetenceAverageDAO" %>
+	<%@ page import ="MyBatisPackage.dao.CoursDAO" %>
+	<%@ page import ="MyBatisPackage.dao.ExamAverageDAO" %>
+	<%@ page import ="MyBatisPackage.dao.SessionAverageDAO" %>
+	<%@ page import ="MyBatisPackage.model.ClassAverage" %>
+	<%@ page import ="MyBatisPackage.model.CompetenceAverage" %>
+	<%@ page import ="MyBatisPackage.model.Cours" %>
+	<%@ page import ="MyBatisPackage.model.ExamAverage" %>
+	<%@ page import ="MyBatisPackage.model.SessionAverage" %>
+
  	
 
 
 	<% String cour_act= (String)request.getAttribute("myname").toString().toUpperCase();
-    String cip_act = (String)request.getAttribute("cip").toString().toUpperCase(); 
+    String cip_act = (String)request.getAttribute("cip").toString().toUpperCase();
+    int groupe_act = (int)request.getAttribute("groupe").toint();
+    String trim_act = (String)request.getAttribute("trimestre").toString().toUpperCase();
 
     ClassAverage Class_act;
-    List<ClassAverage> Class_list;
-	ClassAverageDAO test = new ClassAverageDAO();
-	Class_act = test.getClassAverageByCIPAndCoursId(cip_act, cour_act);
-    Class_list = test.getAllClassAverageByCIP(cip_act); %>
+	ClassAverageDAO class_total = new ClassAverageDAO();
+	Class_act = test.getClassAverageByCIPAndCoursId(cip_act, cour_act, groupe_act, trim_act);
+     %>
 
 
 
@@ -35,14 +45,12 @@
 
 <p id="NOW"></p>
 <script>
-document.getElementById("NOW").innerHTML ="Note globale du cours : "+
-"temp" + " = " + "C";
+document.getElementById("NOW").innerHTML ="Note globale du cours : = " + Class_act.getCoteIndividuelle();
 </script>
 
 <p id="MOYG"></p>
 <script>
-document.getElementById("MOYG").innerHTML ="Moyenne du groupe dans ce cours : "+
-"temp" + " = " + "C";
+document.getElementById("MOYG").innerHTML ="Moyenne du groupe dans ce cours : = " + Class_act.getCoteGroupe();
 </script>
 
 <!--
@@ -56,19 +64,28 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 
   <tr>
     <th> <h3>Évaluation</h3></th>
-    <th> <h3>Totale</h3> <p> note/ponderation</p> </th>
-    <th> <h3>Moyenne</h3> <p> note/ponderation</p></th>
-    <th> <h3>competences</h3> <p> note/ponderation</p></th>
-    <th> <h3> moyenne competences</h3> <p> note/ponderation</p></th>
+    <th> <h3>C1</h3></th>
+    <th> <h3>C2</h3></th>
+    <th> <h3>C3</h3></th>
+    <th> <h3>Note</h3> <p></th>
+    <th> <h3>Moyenne</h3> <p></th>
+    <th> <h3>Pondération</h3></th>
   </tr>
 
 
   	<% List<ExamAverage> evals;
 	  ExamAverageDAO testExams = new ExamAverageDAO();
-      evals = testExams.getAllExamAverageByCIPAndClass(cip_act, cour_act);
+      evals = testExams.getAllExamAverageByCIPAndClass(cip_act, cour_act, groupe_act, trim_act);
+      List<CompetenceAverage> compt;
+      CompetenceAverageDAO someTest = new CompetenceAverageDAO();
+      compt = someTest.getAllCompetenceAverageByCIP(cip_act, cour_act, groupe_act, trim_act);
+      
     for (int i = 0; i < evals.size(); i++) {
       %> 
   <tr>
+    <td> <%=evals.get(i).getNomExam() %></td>
+    <td> <%=copmt.get(i).getNomExam() %></td>
+    <td> <%=evals.get(i).getNomExam() %></td>
     <td> <%=evals.get(i).getNomExam() %></td>
     <td><%= evals.get(i).getNote() %>  </td>
     <td> <%=evals.get(i).getMoyenne() %>  </td>
@@ -90,13 +107,13 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 
 <script>
 function precedant() {
-    <!-- lien cours précédent -->
+    
     }
 </script>
 
 <script>
 function suivant() {
-    <!-- lien cours suivant -->
+   
 	}
 </script>
 

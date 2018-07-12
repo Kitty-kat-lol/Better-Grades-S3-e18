@@ -34,11 +34,14 @@ public class Manager {
 		System.out.println(someAverage.toString());
 		someAverage = test.getClassAverageByCIPAndCoursId("CONT3301", "GEN220", 25, "H18");
 		System.out.println(someAverage.toString());
+<<<<<<< HEAD
 		
 		List<ClassAverage> someClasses;
 		someClasses = test.getAllClassAverageByCIP("CONT3301", "E18");
 		System.out.println(someClasses.toString());
 
+=======
+>>>>>>> 79d4364670232fc029fa0c0fb40c4fb2663c4eb4
 		
 		List<CompetenceAverage> someCompetences;
 		CompetenceAverageDAO someTest = new CompetenceAverageDAO();
