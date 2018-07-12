@@ -21,4 +21,16 @@ public class ExamAverageDAO {
 			sqlSession.close();
 		}
 	}
+	
+	public List<ExamAverage> getAllExam(String cip, String idCours, int groupe_id, String trimestre_id) {
+		cip.toUpperCase();
+		SqlSession sqlSession = MyBatisDAOUtil.getSqlSessionFactory()
+				.openSession();
+		try {
+			ExamAverageMapper examAverageMapper = sqlSession.getMapper(ExamAverageMapper.class);
+			return examAverageMapper.getAllExam(cip, idCours, groupe_id, trimestre_id);
+		} finally {
+			sqlSession.close();
+		}
+	}
 }

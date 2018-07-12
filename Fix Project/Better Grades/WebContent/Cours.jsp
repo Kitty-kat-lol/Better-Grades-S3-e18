@@ -3,16 +3,13 @@
 <!DOCTYPE html>
 <html>
 
-<link rel="stylesheet" type="text/css" href="css/home.css">
 
+<link rel="stylesheet" type="text/css" href="css/home.css">
 <head>
 <meta charset="UTF-8">
   <title>Bienvenue</title>
   </head>
-  
 <body>
-<nav class = "background">
-<nav class = "content">
 	<%@ page import ="MyBatisPackage.dao.ClassAverageDAO" %>
 	<%@ page import ="java.util.*" %>
 	<%@ page import ="MyBatisPackage.model.ClassAverage" %>
@@ -39,14 +36,13 @@
 	Class_act = class_total.getClassAverageByCIPAndCoursId(cip_act, cour_act, groupe_act, trim_act);
      %>
 
-<img src="images/logoudes.png" />
 
-<nav class = 'content_header' >
+
 <h1> <%= cour_act %></h1>
 
 
-<h1><%= cip_act %> </h1>
-</nav>
+<p><%= cip_act %> </p>
+
 <p id="NOW"></p>
 <script>
 document.getElementById("NOW").innerHTML ="Note globale du cours : = " + Class_act.getCoteIndividuelle();
