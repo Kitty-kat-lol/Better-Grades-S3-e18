@@ -28,12 +28,12 @@
 
 	<% String cour_act= (String)request.getAttribute("myname").toString().toUpperCase();
     String cip_act = (String)request.getAttribute("cip").toString().toUpperCase();
-    int groupe_act = (int)request.getAttribute("groupe").toint();
+    int groupe_act = (int)request.getAttribute("groupe");
     String trim_act = (String)request.getAttribute("trimestre").toString().toUpperCase();
 
     ClassAverage Class_act;
 	ClassAverageDAO class_total = new ClassAverageDAO();
-	Class_act = test.getClassAverageByCIPAndCoursId(cip_act, cour_act, groupe_act, trim_act);
+	Class_act = class_total.getClassAverageByCIPAndCoursId(cip_act, cour_act, groupe_act, trim_act);
      %>
 
 
@@ -64,9 +64,9 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 
   <tr>
     <th> <h3>Évaluation</h3></th>
-    <th> <h3>C1</h3></th>
-    <th> <h3>C2</h3></th>
-    <th> <h3>C3</h3></th>
+    <% for (int i = 0; i < evals.size(); i++) {%> 
+    <th> <h3>"C"<%System.out.print(i); %></h3></th>
+    <% } %>
     <th> <h3>Note</h3> <p></th>
     <th> <h3>Moyenne</h3> <p></th>
     <th> <h3>Pondération</h3></th>
@@ -84,9 +84,9 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
       %> 
   <tr>
     <td> <%=evals.get(i).getNomExam() %></td>
-    <td> <%=evals.get(i).getC1() %></td>
-    <td> <%=evals.get(i).getC2() %></td>
-    <td> <%=evals.get(i).getC3() %></td>
+    <% for (int j = 0; j < evals.size(); j++) {%> 
+    <th> <h3><% evals.get(i).getCompetence(i);%></h3></th>
+    <% } %>
     <td><%= evals.get(i).getTotal() %>  </td>
     <td> <%=evals.get(i).getMoyenne() %>  </td>
     <td> <%=evals.get(i).getPonderation() %>  </td>

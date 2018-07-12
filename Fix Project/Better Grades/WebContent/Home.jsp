@@ -50,7 +50,7 @@
 	    </tr>
 	
 		<%
-	    String trim_act = (String)request.getAttribute("trimestre").toString().toUpperCase(); 
+	    String trim_act = "h18";
 
 		List<ClassAverage> class_list;
 		ClassAverageDAO temp = new ClassAverageDAO();
@@ -67,7 +67,7 @@
 	   <td>  <%= class_list.get(i).getTotal() %> </td>
 	   <td> <%= class_list.get(i).getMoyenne()  %> </td>
 	   <td> <%= class_list.get(i).getCoteIndividuelle() %> </td>
-	   <td> <%= class_list.get(i).getCoteGroupe() %> </td>
+	   <td> <%= class_list.get(i).getCoteMoyenne() %> </td>
 	   <td> <%= class_list.get(i).getCredit() %> </td>
 	   </tr>
 	<% } %>   
