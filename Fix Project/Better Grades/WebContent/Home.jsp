@@ -16,7 +16,17 @@
 	<%@ page import ="MyBatisPackage.dao.ClassAverageDAO" %>
 	<%@ page import ="java.util.*" %>
 	<%@ page import ="MyBatisPackage.model.ClassAverage" %>
-	
+	<%@ page import ="MyBatisPackage.dao.CompetenceAverageDAO" %>
+	<%@ page import ="MyBatisPackage.dao.CoursDAO" %>
+	<%@ page import ="MyBatisPackage.dao.ExamAverageDAO" %>
+	<%@ page import ="MyBatisPackage.dao.SessionAverageDAO" %>
+	<%@ page import ="MyBatisPackage.model.ClassAverage" %>
+	<%@ page import ="MyBatisPackage.model.CompetenceAverage" %>
+	<%@ page import ="MyBatisPackage.model.Cours" %>
+	<%@ page import ="MyBatisPackage.model.ExamAverage" %>
+	<%@ page import ="MyBatisPackage.model.SessionAverage" %>
+
+
 	<% String cip=(String)request.getAttribute("cip").toString().toUpperCase(); %>
 	
 	<img src="images/logoudes.png" />
@@ -35,15 +45,16 @@
 	        <th> <h3>Note</h3> </th>
 	        <th> <h3>Moyenne</h3> </th>
 	        <th> <h3>Cote</h3> </th>
-	        <th> <h3>Moyenne Cote</h3></th>
+	        <th> <h3>Cote groupe</h3></th>
 	        <th> <h3>Crédits</h3></th>
 	    </tr>
 	
 		<%
-		
+	    String trim_act = (String)request.getAttribute("trimestre").toString().toUpperCase(); 
+
 		List<ClassAverage> class_list;
 		ClassAverageDAO temp = new ClassAverageDAO();
-		class_list = temp.getAllClassAverageByCIP(cip);
+		class_list = temp.getAllClassAverageByCIP(cip, trim_act);
 	for (int i = 0; i < class_list.size(); i++) {
 		%>
 		<tr>
@@ -56,6 +67,8 @@
 	   <td>  <%= class_list.get(i).getTotal() %> </td>
 	   <td> <%= class_list.get(i).getMoyenne()  %> </td>
 	   <td> <%= class_list.get(i).getCoteIndividuelle() %> </td>
+	   <td> <%= class_list.get(i).getCoteGroupe() %> </td>
+	   <td> <%= class_list.get(i).getCredit() %> </td>
 	   </tr>
 	<% } %>   
 	
