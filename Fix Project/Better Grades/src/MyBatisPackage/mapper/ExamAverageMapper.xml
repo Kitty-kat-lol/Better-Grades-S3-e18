@@ -35,6 +35,7 @@
   trimestre_id as trimestre_id,
   titre as nomExam,
   totalexam as totalexam,
+  totalmoyenne as totalmoyenne,
   ponderationtotalexam as ponderationtotalexam
 from public_views.examresultavg
 WHERE CIP_ETUDIANT = #{cip_etudiant}
@@ -56,6 +57,7 @@ WHERE CIP_ETUDIANT = #{cip_etudiant}
 		<result property="ponderation" column="ponderation" />
 		<result property="ponderationtotalexam" column="ponderationtotalexam" />
 		<result property="totalexam" column="totalexam" />
+		<result property="totalmoyenne" column="totalmoyenne" />
 		
 	</resultMap>
 
