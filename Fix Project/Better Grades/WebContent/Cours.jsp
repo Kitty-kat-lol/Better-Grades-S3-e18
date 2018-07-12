@@ -58,10 +58,12 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 
   <tr>
     <th> <h3>Évaluation</h3></th>
-    <th> <h3>Totale</h3> <p> note/ponderation</p> </th>
-    <th> <h3>Moyenne</h3> <p> note/ponderation</p></th>
-    <th> <h3>competences</h3> <p> note/ponderation</p></th>
-    <th> <h3> moyenne competences</h3> <p> note/ponderation</p></th>
+    <th> <h3>C1</h3></th>
+    <th> <h3>C2</h3></th>
+    <th> <h3>C3</h3></th>
+    <th> <h3>Note</h3> <p></th>
+    <th> <h3>Moyenne</h3> <p></th>
+    <th> <h3>Pondération</h3></th>
   </tr>
 
 
@@ -92,13 +94,13 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 
 <script>
 function precedant() {
-    <!-- lien cours précédent -->
+    
     }
 </script>
 
 <script>
 function suivant() {
-    <!-- lien cours suivant -->
+   
 	}
 </script>
 
