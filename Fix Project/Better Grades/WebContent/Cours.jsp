@@ -12,6 +12,7 @@
 <body>
 	<%@ page import ="MyBatisPackage.dao.ClassAverageDAO" %>
 	<%@ page import ="java.util.*" %>
+	<%@ page import ="java.math.*" %>
 	<%@ page import ="MyBatisPackage.model.ClassAverage" %>
 	<%@ page import ="MyBatisPackage.dao.CompetenceAverageDAO" %>
 	<%@ page import ="MyBatisPackage.dao.CoursDAO" %>
@@ -72,33 +73,65 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
   <tr>
     <th> <h3>Évaluation</h3></th>
     <% for (int i = 0; i < compt.size(); i++) {%> 
-    <th> <h3>C<%System.out.print(i); %></h3></th>
+    <th> <h3>C<%=i %></h3></th>
     <% } %>
     <th> <h3>Note</h3> <p></th>
     <th> <h3>Moyenne du groupe</h3> <p></th>
     <th> <h3>Pondération</h3></th>
   </tr>
 
-    <%String temp_str ="";
-    for (int i = 0; i < evals.size(); i++) {
-    	if (evals.get(i).getNomExam() != temp_str){
-    		temp_str = evals.get(i).getNomExam();
-      %> 
+    <%int len = 0;
+    String temp_str ="";
+    for (int i = 0; i < evals.size(); i++)
+    {
+		if (evals.get(i).getNomExam() != temp_str)
+		{
+    		len = len + 1;
+		}
+		temp_str = evals.get(i).getNomExam();
+    }
+    
+    int run = 0;
+    temp_str ="";
+    String tabb[][] = new String[len][(4+compt.size())];
+    for (int i = 0; i < evals.size(); i++) 
+    {
+		if (evals.get(i).getNomExam() != temp_str)
+		{
+			tabb[run][0] = evals.get(i).getNomExam();
+			for (int j = 0; j < compt.size(); j++) 
+			{
+			   	if((j+i) < evals.size())
+			   	{
+			   		if (evals.get(j+i).getCompetence() == (j+1))
+			   		{
+			   			tabb[run][(j+1)] = evals.get(i).getNote().toString();
+			   		}
+			       	else 
+			       	{
+			       		tabb[run][(j+1)] = "null";
+			       	}
+			   	}
+			}
+		tabb[run][(1+compt.size())] = String.valueOf(Math.round(evals.get(i).getTotalExam()));
+		tabb[run][(2+compt.size())] = String.valueOf(Math.round(evals.get(i).getMoyenne()));
+		tabb[run][(3+compt.size())] = String.valueOf(Math.round(evals.get(i).getPonderation()));
+		run = run + 1;
+		}
+	temp_str = evals.get(i).getNomExam();
+	} %> 
+	
+	<%for (int i = 0;i < tabb.length; i++){ %>
   <tr>
-    <td> <%=evals.get(i).getNomExam() %></td>
-    <% for (int j = 0; j < compt.size(); j++) {
-    		int a = (i+j-1);
-    	if (evals.get(a).getCompetence() == (j+1)){%>
-    	<th><%=evals.get(a).getNote() %></th> 
-    		
-    <% }
-    	else %>
-    	<th>-<th> <% } %>
-    <td><%=evals.get(i).getTotalExam() %></td>
-    <td> <%=evals.get(i).getMoyenne() %>  </td>
-    <td> <%=evals.get(i).getPonderation() %>  </td>
+  	<td><%=tabb[i][0]%></td>
+  		<%for (int j = 0; j < compt.size();j++){ %>
+    <td><%=tabb[i][(j+1)]%></td>
+    	<% } %>
+    <td><%=tabb[i][(1+compt.size())]%></td>
+    <td><%=tabb[i][(2+compt.size())]%></td>
+    <td><%=tabb[i][(3+compt.size())]%></td>
   </tr>
-   <% }} %> 
+   <% } %>
 
 </table>
 

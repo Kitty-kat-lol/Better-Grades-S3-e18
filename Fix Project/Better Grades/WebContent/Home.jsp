@@ -43,18 +43,12 @@
 	
 
     <FORM>
-    <SELECT name="nom" size="1">
+    <SELECT name="session" size="1">
     <% for (int i = 0; i < someSessions.size(); i++) {%>
 		<option><%= someSessions.get(i).getTrimestre()%>
 	<%}%>
     </SELECT>
     </FORM>
-	
-	<ul> 
-	<% for (int i = 0; i < someSessions.size(); i++) {%>
-		<li><a href="#">session<%System.out.print(i);%></a></li>
-	<%}%>
-	</ul>
 	
 	<nav class = "tableau">
 	<table border="1" cellpadding="10">
@@ -69,7 +63,7 @@
 	    </tr>
 	
 		<%
-	    String trim_act = "H18";
+	    String trim_act ="H18";
 		String cip_act=(String)request.getAttribute("cip").toString().toUpperCase();
 
 		List<ClassAverage> class_list;
