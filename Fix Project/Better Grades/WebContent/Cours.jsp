@@ -20,6 +20,7 @@
 <nav class = "content">
 	<%@ page import ="MyBatisPackage.dao.ClassAverageDAO" %>
 	<%@ page import ="java.util.*" %>
+	<%@ page import ="java.math.*" %>
 	<%@ page import ="MyBatisPackage.model.ClassAverage" %>
 	<%@ page import ="MyBatisPackage.dao.CompetenceAverageDAO" %>
 	<%@ page import ="MyBatisPackage.dao.CoursDAO" %>
@@ -46,6 +47,10 @@
 
 <img src="images/logoudes.png" />
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c9c86967ffaad4605865246d82a01fc63e87d830
 <nav class = 'content_header' >
 <h1> <%= cour_act %></h1>
 

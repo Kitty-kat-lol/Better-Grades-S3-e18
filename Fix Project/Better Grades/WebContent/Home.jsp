@@ -27,7 +27,10 @@
 	<%@ page import ="MyBatisPackage.model.SessionAverage" %>
 
 
-	<% String cip=(String)request.getAttribute("cip").toString().toUpperCase(); %>
+	<% String cip=(String)request.getAttribute("cip").toString().toUpperCase();
+		List<SessionAverage> someSessions;
+		SessionAverageDAO sessionTest = new SessionAverageDAO();
+		someSessions = sessionTest.getAllSessionByCIP(cip);%>
 	
 	<img src="images/logoudes.png" />
 	
@@ -36,6 +39,17 @@
 	
 	<h1>Liste de vos cours:</h1>
 	</nav>
+	<!--  
+	<h1>Choisissez Session<h1>
+	
+    <FORM action="Home.jsp" method="get">
+    <SELECT id= "session" name="session" size="1">
+    <% for (int i = 0; i < someSessions.size(); i++) {%>
+		<option value = "<%=someSessions.get(i).getTrimestre()%>" ><%= someSessions.get(i).getTrimestre()%></option>
+		<% } %>
+    </SELECT>
+    </FORM>
+	-->
 	
 	<nav class = "tableau">
 	<table border="1" cellpadding="10">
@@ -55,10 +69,9 @@
 
 		List<ClassAverage> class_list;
 		ClassAverageDAO temp = new ClassAverageDAO();
-		class_list = temp.getAllClassAverageByCIP(cip_act, trim_act);%>
+		class_list = temp.getAllClassAverageByCIP(cip_act, trim_act);
 		
-	<% for (int i = 0; i < class_list.size(); i++) {
-		%>
+		for (int i = 0; i < class_list.size(); i++) {%>
 		<tr>
 	
 	<td> <form action="cours" method="post">
@@ -66,8 +79,8 @@
 	    <input type="submit" value=<%= class_list.get(i).getIdCours() %>  />
 	</form></td> 
 	
-	   <td>  <%= class_list.get(i).getTotal() %> </td>
-	   <td> <%= class_list.get(i).getMoyenne()  %> </td>
+	   <td>  <%= String.valueOf(Math.round(class_list.get(i).getTotal())) %> </td>
+	   <td> <%= String.valueOf(Math.round(class_list.get(i).getMoyenne()))  %> </td>
 	   <td> <%= class_list.get(i).getCoteIndividuelle() %> </td>
 	   <td> <%= class_list.get(i).getCoteMoyenne() %> </td>
 	   <td> <%= class_list.get(i).getCredit() %> </td>
