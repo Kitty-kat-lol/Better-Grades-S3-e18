@@ -73,7 +73,7 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
   <tr>
     <th> <h3>Évaluation</h3></th>
     <% for (int i = 0; i < compt.size(); i++) {%> 
-    <th> <h3>C<%=i %></h3></th>
+    <th> <h3>C<%=(i+1) %></h3></th>
     <% } %>
     <th> <h3>Note</h3> <p></th>
     <th> <h3>Moyenne du groupe</h3> <p></th>
@@ -84,7 +84,7 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
     String temp_str ="";
     for (int i = 0; i < evals.size(); i++)
     {
-		if (evals.get(i).getNomExam() != temp_str)
+		if (!evals.get(i).getNomExam().equals(temp_str))
 		{
     		len = len + 1;
 		}
@@ -96,7 +96,7 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
     String tabb[][] = new String[len][(4+compt.size())];
     for (int i = 0; i < evals.size(); i++) 
     {
-		if (evals.get(i).getNomExam() != temp_str)
+		if (!evals.get(i).getNomExam().equals(temp_str))
 		{
 			tabb[run][0] = evals.get(i).getNomExam();
 			for (int j = 0; j < compt.size(); j++) 
@@ -105,7 +105,7 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 			   	{
 			   		if (evals.get(j+i).getCompetence() == (j+1))
 			   		{
-			   			tabb[run][(j+1)] = evals.get(i).getNote().toString();
+			   			tabb[run][(j+1)] = evals.get(i+j).getNote().toString();
 			   		}
 			       	else 
 			       	{
