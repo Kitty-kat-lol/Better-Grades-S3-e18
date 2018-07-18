@@ -105,7 +105,7 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 			   	{
 			   		if (evals.get(j+i).getCompetence() == (j+1))
 			   		{
-			   			tabb[run][(j+1)] = evals.get(i+j).getNote().toString();
+			   			tabb[run][(j+1)] = String.valueOf(Math.round(evals.get(i+j).getNote()));
 			   		}
 			       	else 
 			       	{
@@ -114,7 +114,7 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 			   	}
 			}
 		tabb[run][(1+compt.size())] = String.valueOf(Math.round(evals.get(i).getTotalExam()));
-		tabb[run][(2+compt.size())] = String.valueOf(Math.round(evals.get(i).getMoyenne()));
+		tabb[run][(2+compt.size())] = String.valueOf(Math.round(evals.get(i).getTotalMoyenne()));
 		tabb[run][(3+compt.size())] = String.valueOf(Math.round(evals.get(i).getPonderation()));
 		run = run + 1;
 		}
