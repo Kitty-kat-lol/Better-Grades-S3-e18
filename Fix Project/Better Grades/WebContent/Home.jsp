@@ -40,11 +40,15 @@
 	<h1>Liste de vos cours:</h1>
 	</nav>
 	<h1>Choisissez Session<h1>
-	<ul> 
-	<% for (int i = 0; i < someSessions.size(); i++) {%>
-		<li><a href="#">session<%System.out.print(i);%></a></li>
+	
+
+    <FORM>
+    <SELECT name="session" size="1">
+    <% for (int i = 0; i < someSessions.size(); i++) {%>
+		<option><%= someSessions.get(i).getTrimestre()%>
 	<%}%>
-	</ul>
+    </SELECT>
+    </FORM>
 	
 	<nav class = "tableau">
 	<table border="1" cellpadding="10">
@@ -59,7 +63,7 @@
 	    </tr>
 	
 		<%
-	    String trim_act = "H18";
+	    String trim_act ="H18";
 		String cip_act=(String)request.getAttribute("cip").toString().toUpperCase();
 
 		List<ClassAverage> class_list;
