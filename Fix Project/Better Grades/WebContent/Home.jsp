@@ -41,12 +41,11 @@
 	</nav>
 	<h1>Choisissez Session<h1>
 	
-
-    <FORM>
-    <SELECT name="session" size="1">
+    <FORM action="Home.jsp" method="get">
+    <SELECT id= "session" name="session" size="1">
     <% for (int i = 0; i < someSessions.size(); i++) {%>
-		<option><%= someSessions.get(i).getTrimestre()%>
-	<%}%>
+		<option value = "<%=someSessions.get(i).getTrimestre()%>" ><%= someSessions.get(i).getTrimestre()%></option>
+		<% } %>
     </SELECT>
     </FORM>
 	
@@ -63,7 +62,8 @@
 	    </tr>
 	
 		<%
-	    String trim_act ="H18";
+	    String trim_act = "H18";
+		System.out.println(trim_act);
 		String cip_act=(String)request.getAttribute("cip").toString().toUpperCase();
 
 		List<ClassAverage> class_list;
