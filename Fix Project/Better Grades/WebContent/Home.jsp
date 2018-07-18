@@ -78,8 +78,8 @@
 	    <input type="submit" value=<%= class_list.get(i).getIdCours() %>  />
 	</form></td> 
 	
-	   <td>  <%= class_list.get(i).getTotal() %> </td>
-	   <td> <%= class_list.get(i).getMoyenne()  %> </td>
+	   <td>  <%= String.valueOf(Math.round(class_list.get(i).getTotal())) %> </td>
+	   <td> <%= String.valueOf(Math.round(class_list.get(i).getMoyenne()))  %> </td>
 	   <td> <%= class_list.get(i).getCoteIndividuelle() %> </td>
 	   <td> <%= class_list.get(i).getCoteMoyenne() %> </td>
 	   <td> <%= class_list.get(i).getCredit() %> </td>
