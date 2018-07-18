@@ -10,6 +10,8 @@
   <title>Bienvenue</title>
   </head>
 <body>
+<nav class = "background">
+<nav class = "content">
 	<%@ page import ="MyBatisPackage.dao.ClassAverageDAO" %>
 	<%@ page import ="java.util.*" %>
 	<%@ page import ="java.math.*" %>
@@ -38,7 +40,9 @@
      %>
 
 
+<img src="images/logoudes.png" />
 
+<nav class = 'content_header' >
 <h1> <%= cour_act %></h1>
 
 
