@@ -39,6 +39,7 @@
 	
 	<h1>Liste de vos cours:</h1>
 	</nav>
+	<!--  
 	<h1>Choisissez Session<h1>
 	
     <FORM action="Home.jsp" method="get">
@@ -48,6 +49,7 @@
 		<% } %>
     </SELECT>
     </FORM>
+	-->
 	
 	<nav class = "tableau">
 	<table border="1" cellpadding="10">
@@ -63,7 +65,6 @@
 	
 		<%
 	    String trim_act = "H18";
-		System.out.println(trim_act);
 		String cip_act=(String)request.getAttribute("cip").toString().toUpperCase();
 
 		List<ClassAverage> class_list;
