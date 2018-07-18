@@ -30,8 +30,10 @@
 	<% String cip=(String)request.getAttribute("cip").toString().toUpperCase();
 		List<SessionAverage> someSessions;
 		SessionAverageDAO sessionTest = new SessionAverageDAO();
-		someSessions = sessionTest.getAllSessionByCIP(cip);%>
-	
+		someSessions = sessionTest.getAllSessionByCIP(cip);
+		
+		%>
+		
 	<img src="images/logoudes.png" />
 	
 	<nav class = "content_header">
@@ -39,20 +41,26 @@
 	
 	<h1>Liste de vos cours:</h1>
 	</nav>
-	<!--  
-	<h1>Choisissez Session<h1>
 	
-    <FORM action="Home.jsp" method="get">
-    <SELECT id= "session" name="session" size="1">
-    <% for (int i = 0; i < someSessions.size(); i++) {%>
-		<option value = "<%=someSessions.get(i).getTrimestre()%>" ><%= someSessions.get(i).getTrimestre()%></option>
+	<h1>Choisissez Session</h1>
+	
+	<Form name="form1" method= "post">
+    <SELECT id="session_selector" name="sessionsession" onchange="document.forms['form1'].submit()">
+    <% 
+    for (int i = 0; i < someSessions.size(); i++) {
+    %>
+	<option value=<%=someSessions.get(i).getTrimestre() %>> <%=someSessions.get(i).getTrimestre() %> </option>
 		<% } %>
+	
     </SELECT>
-    </FORM>
-	-->
+ 	
+	</Form>
+	
+	
 	
 	<nav class = "tableau">
-	<table border="1" cellpadding="10">
+	<Form name="Liste_de_cours" >
+	<table id="La_Chose" border="1" cellpadding="10">
 	
 		<tr>
 	        <th> <h3>Nom</h3></th>
@@ -63,13 +71,11 @@
 	        <th> <h3>Crédits</h3></th>
 	    </tr>
 	
-		<%
-	    String trim_act = "H18";
-		String cip_act=(String)request.getAttribute("cip").toString().toUpperCase();
+		<%String cip_act=(String)request.getAttribute("cip").toString().toUpperCase();
 
 		List<ClassAverage> class_list;
 		ClassAverageDAO temp = new ClassAverageDAO();
-		class_list = temp.getAllClassAverageByCIP(cip_act, trim_act);
+		class_list = temp.getAllClassAverageByCIP(cip_act, request.getParameter("sessionsession"));
 		
 		for (int i = 0; i < class_list.size(); i++) {%>
 		<tr>
@@ -85,14 +91,21 @@
 	   <td> <%= class_list.get(i).getCoteMoyenne() %> </td>
 	   <td> <%= class_list.get(i).getCredit() %> </td>
 	   </tr>
-	<% } %>   
+	<% }%>
+	
 	
 	
 	</table>
+	</Form>
 	</nav>
 	
-</nav>
-</nav>
+<script>
+function refresh_table() {
+	 this.getElementById("La_Chose").submit();
+	 System.out.println(request.getParameter("sessionsession"));
+	 out.println("refresh_table");
+    }
+</script>
 
 </body>
 </html>
