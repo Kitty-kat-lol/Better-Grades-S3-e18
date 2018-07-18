@@ -44,17 +44,7 @@
 	
 	<h1>Choisissez Session</h1>
 	
-	<Form name="form1" method= "post">
-    <SELECT id="session_selector" name="sessionsession" onchange="document.forms['form1'].submit()">
-    <% 
-    for (int i = 0; i < someSessions.size(); i++) {
-    %>
-	<option value=<%=someSessions.get(i).getTrimestre() %>> <%=someSessions.get(i).getTrimestre() %> </option>
-		<% } %>
 	
-    </SELECT>
- 	
-	</Form>
 	
 	
 	
@@ -75,7 +65,7 @@
 
 		List<ClassAverage> class_list;
 		ClassAverageDAO temp = new ClassAverageDAO();
-		class_list = temp.getAllClassAverageByCIP(cip_act, request.getParameter("sessionsession"));
+		class_list = temp.getAllClassAverageByCIP(cip_act, (String)request.getAttribute("session").toString().toUpperCase());
 		
 		for (int i = 0; i < class_list.size(); i++) {%>
 		<tr>
