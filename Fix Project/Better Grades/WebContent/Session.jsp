@@ -41,16 +41,17 @@
 	    </tr>
 	
 		<%String cip_act=(String)request.getAttribute("cip").toString().toUpperCase();
-
 		List<SessionAverage> session_list;
 		SessionAverageDAO temp = new SessionAverageDAO();
 		session_list = temp.getAllSessionByCIP(cip_act);
 		
 		for (int i = 0; i < session_list.size(); i++) {%>
-		<tr>
+	<tr>	
+	<td> 
 	
-	<td> <form action="session" method="post">
-		<input type="hidden" name="NomdeSession" size="20" value=<%= session_list.get(i).getTrimestre() %> >
+	<form action="session" method="post">
+		<input type="hidden" name="trimestre" size="25" value=<%= session_list.get(i).getTrimestre() %> >
+		<input type="hidden" name="cip" size="25" value=<%= cip_act %> >
 	    <input type="submit" value= <%= session_list.get(i).getTrimestre() %>  />
 	</form></td>
 	<td><%= session_list.get(i).getTotal() %></td>

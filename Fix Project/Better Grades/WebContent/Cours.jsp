@@ -37,13 +37,20 @@
 
 	<% String cour_act= (String)request.getAttribute("myname").toString().toUpperCase();
     String cip_act = (String)request.getAttribute("cip").toString().toUpperCase();
-    int groupe_act = 1;
-    String trim_act = "H18";
-    request.setAttribute("session","E18");
-
+    String trim_act = (String)request.getAttribute("trimestre").toString().toUpperCase();
+    String groupe = (String)request.getAttribute("groupe");
+   	int groupe_act = Integer.parseInt(groupe);
+   // int groupe_act = 1;
+   //String trim_act = "H18";
+  // request.setAttribute("session","E18");
+    
+    List<ClassAverage> class_list;//important pr bouton next et previous, no deliterino
+    ClassAverageDAO temp = new ClassAverageDAO();//important pr bouton next et previous, no deliterino
+	class_list = temp.getAllClassAverageByCIP(cip_act, trim_act);//important pr bouton next et previous, no deliterino
+	
     ClassAverage Class_act;
 	ClassAverageDAO class_total = new ClassAverageDAO();
-	Class_act = class_total.getClassAverageByCIPAndCoursId(cip_act, cour_act, groupe_act, (String)request.getAttribute("session").toString().toUpperCase());
+	Class_act = class_total.getClassAverageByCIPAndCoursId(cip_act, cour_act, groupe_act, trim_act);
      %>
 
 <img src="images/logoudes.png" />
@@ -81,7 +88,8 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
       evals = testExams.getAllExamAverageByCIPAndClass(cip_act, cour_act, groupe_act, trim_act);
       List<CompetenceAverage> compt;
       CompetenceAverageDAO someTest = new CompetenceAverageDAO();
-      compt = someTest.getAllCompetenceAverageByCIP(cip_act, cour_act, groupe_act, trim_act);%>
+      compt = someTest.getAllCompetenceAverageByCIP(cip_act, cour_act, groupe_act, trim_act);
+      %>
       
   <tr>
     <th> <h3>Évaluation</h3></th>
@@ -91,8 +99,22 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
     <th> <h3>Note</h3> <p></th>
     <th> <h3>Moyenne du groupe</h3> <p></th>
     <th> <h3>Pondération</h3></th>
-  </tr>
-
+  </tr><%
+  int p =0; //index previous
+	int n =0; //index next
+for (int i = 0; i < class_list.size(); i++) { //trouver la position du cours pour suivant/avant
+	if (class_list.get(i).getIdCours().equals(cour_act)){
+		n =i+1;
+		p=i-1;
+	}
+}
+	if (n==class_list.size()){
+		n=class_list.size()-1;
+	}
+	if (p<0){
+		p=0;
+	}
+%>
     <%int len = 0;
     String temp_str ="";
     for (int i = 0; i < evals.size(); i++)
@@ -151,10 +173,18 @@ document.getElementById("Cote_prevue").innerHTML ="Cote_prevue : D";
 <p id="space"></p>
 
 <table>
-	<tr>
-    <td><button type="button" onclick="precedant()">Cours précédent!</button> </td>
-    <td><button type="button" onclick="suivant()">Cours suivant!</button> </td>	
-    <tr>
+	<td> <form action="cours" method="post">
+		<input type="hidden" name="NomdeCours" size="20" value=<%= class_list.get(p).getIdCours() %> >
+		<input type="hidden" name="groupe" size="20" value=<%= 1 %> >
+		<input type="hidden" name="trimestre" size="20" value=<%= trim_act %> >
+	    <input type="submit" value="Cours Precedant"  />
+	</form></td> 
+		<td> <form action="cours" method="post">
+		<input type="hidden" name="NomdeCours" size="20" value=<%= class_list.get(n).getIdCours() %> >
+		<input type="hidden" name="groupe" size="20" value=<%= 1 %> >
+		<input type="hidden" name="trimestre" size="20" value=<%= trim_act %> >
+	    <input type="submit" value="Cours suivant"/>
+	</form></td> 
 </table>
 
 

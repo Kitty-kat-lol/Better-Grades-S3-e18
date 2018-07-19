@@ -12,14 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class JSPConnexion
  */
-@WebServlet("/cours")
-public class JSPConnexion extends HttpServlet {
+@WebServlet("/session")
+public class JSPConnexion2 extends HttpServlet {
 		private static final long serialVersionUID = 1L;
 	       
 	    /**
 	     * @see HttpServlet#HttpServlet()
 	     */
-	    public JSPConnexion() {
+	    public JSPConnexion2() {
 	        super();
 	        // TODO Auto-generated constructor stub
 	    }
@@ -28,19 +28,15 @@ public class JSPConnexion extends HttpServlet {
 		 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 		 */
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			String NomdeCours = request.getParameter("NomdeCours");
-			String cip = request.getUserPrincipal().toString().toUpperCase();
-			String trimestre = request.getParameter("trimestre");
-			String groupe = request.getParameter("groupe");
-
-			RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Cours.jsp");
-			request.setAttribute("myname",NomdeCours);
-			request.setAttribute("cip",cip);
-			request.setAttribute("trimestre",trimestre);
-			request.setAttribute("groupe",groupe);
-			RequetsDispatcherObj.forward(request, response);
-			
 		
+			String trimestre = request.getParameter("trimestre");
+			String cip = request.getParameter("cip");
+			
+
+			RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Home.jsp");
+			request.setAttribute("trimestre",trimestre);
+			request.setAttribute("cip",cip);
+			RequetsDispatcherObj.forward(request, response);
 			
 		}
 

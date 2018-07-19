@@ -30,18 +30,10 @@ public class Home extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		
-		
-		
 		response.setContentType("text/html") ;
-		// construction d'un request dispatcher sur la page JSP, qui doit exister
-		// dans la web application courante
 		String cip = request.getUserPrincipal().toString();
 		 response.getWriter().println("Active cip: " + cip);
 	    RequestDispatcher requestDispatcher = request.getRequestDispatcher("Home.jsp") ;
-	    
-	   
 		request.setAttribute("cip",cip);
 		requestDispatcher.forward(request, response);
 	}
