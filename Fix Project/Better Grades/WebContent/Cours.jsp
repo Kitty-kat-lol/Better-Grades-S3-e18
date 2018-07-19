@@ -138,14 +138,25 @@ for (int i = 0; i < class_list.size(); i++) { //trouver la position du cours pou
 			{
 			   	if((j+i) < evals.size())
 			   	{
-			   		if (evals.get(j+i).getCompetence() == (j+1))
+			   		temp_str = evals.get(i).getNomExam();
+			   		//System.out.println(temp_str);
+			   		//System.out.println(evals.get(i+j).getNomExam());
+			   		if (evals.get(i+j).getNomExam().equals(temp_str))
 			   		{
-			   			tabb[run][(j+1)] = String.valueOf(Math.round(evals.get(i+j).getNote()));
+			   			int flag = 0;
+			   			for (int k = 0; k < evals.size(); k++)
+			   			{
+			   				//System.out.println(j+1);
+				   			//System.out.println(evals.get(j+i).getCompetence());
+					   		if (evals.get(j+i).getCompetence() == (k+1))
+					   		{
+					   			flag = 1;
+					   			tabb[run][(k+1)] = String.valueOf(Math.round(evals.get(i+j).getNote()));
+					   		}
+					       	
+			   			}
+			   			//System.out.println(flag);
 			   		}
-			       	else 
-			       	{
-			       		tabb[run][(j+1)] = "null";
-			       	}
 			   	}
 			}
 		tabb[run][(1+compt.size())] = String.valueOf(Math.round(evals.get(i).getTotalExam()));
