@@ -39,7 +39,8 @@
 	        <th> <h3>Cote Individuelle</h3> </th>
 	        <th> <h3>Cote Moyenne</h3> </th>
 	    </tr>
-	
+	<td> <form action="cours" method="post">
+	</form></td> 
 		<%String cip_act=(String)request.getAttribute("cip").toString().toUpperCase();
 		List<SessionAverage> session_list;
 		SessionAverageDAO temp = new SessionAverageDAO();

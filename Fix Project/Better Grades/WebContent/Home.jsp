@@ -55,7 +55,8 @@
 	        <th> <h3>Cote groupe</h3></th>
 	        <th> <h3>Crédits</h3></th>
 	    </tr>
-	
+	<td> <form action="cours" method="post">
+	</form></td> 
 		<%String cip_act=(String)request.getAttribute("cip").toString().toUpperCase();
 		String trimestre_act=(String)request.getAttribute("trimestre").toString().toUpperCase();
 		List<ClassAverage> class_list;
