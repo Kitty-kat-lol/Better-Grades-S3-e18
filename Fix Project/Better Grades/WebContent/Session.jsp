@@ -54,8 +54,8 @@
 		<input type="hidden" name="cip" size="25" value=<%= cip_act %> >
 	    <input type="submit" value= <%= session_list.get(i).getTrimestre() %>  />
 	</form></td>
-	<td><%= session_list.get(i).getTotal() %></td>
-	<td><%= session_list.get(i).getMoyenne() %></td>
+	<td><%= String.valueOf(Math.round(session_list.get(i).getTotal()))%></td>
+	<td><%= String.valueOf(Math.round(session_list.get(i).getMoyenne())) %></td>
 	<td><%= session_list.get(i).getCoteIndividuelle() %></td>
 	<td><%= session_list.get(i).getCoteMoyenne()%></td>	 
 	</tr>

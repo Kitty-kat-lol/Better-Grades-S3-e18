@@ -42,11 +42,6 @@
 	<h1>Liste de vos cours:</h1>
 	</nav>
 	
-	<h1>Choisissez Session</h1>
-	
-	
-	
-	
 	
 	<nav class = "tableau">
 	<Form name="Liste_de_cours" >
@@ -63,7 +58,6 @@
 	
 		<%String cip_act=(String)request.getAttribute("cip").toString().toUpperCase();
 		String trimestre_act=(String)request.getAttribute("trimestre").toString().toUpperCase();
-		//String trimestre_act = "H18";
 		List<ClassAverage> class_list;
 		ClassAverageDAO temp = new ClassAverageDAO();
 		class_list = temp.getAllClassAverageByCIP(cip_act, trimestre_act);
