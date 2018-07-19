@@ -43,7 +43,7 @@
 		<%String cip_act=(String)request.getAttribute("cip").toString().toUpperCase();
 		List<SessionAverage> session_list;
 		SessionAverageDAO temp = new SessionAverageDAO();
-		session_list = temp.getAllSessionByCIP(cip_act);
+		session_list = temp.getAllSessionByCIP(cip_act);//
 		
 		for (int i = 0; i < session_list.size(); i++) {%>
 	<tr>	
